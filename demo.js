@@ -15,4 +15,5 @@ function solve(num1, num2){
 
 solve(1, 2);
 
-console.log('My name is Steven');
+console.log('My name is ' + name + '!');
+console.log(`My name is ${name}!`);
