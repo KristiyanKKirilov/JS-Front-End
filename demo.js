@@ -14,3 +14,5 @@ function solve(num1, num2){
 }
 
 solve(1, 2);
+
+console.log('My name is Steven');
