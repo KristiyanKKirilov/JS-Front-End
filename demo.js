@@ -36,3 +36,20 @@ let infinity = Infinity;
 let singleQuoteLiteral = 'Sing';
 let doubleQuoteLiteral = 'Double';
 let templateLiteral = `Temp`;
+
+let empty = null;
+let unknown = undefined;
+
+//BigInt
+
+let bigNumber = BigInt('9007199254740992');
+console.log(bigNumber);
+
+let bigNumber2 = 9007199254740991n;
+
+let parsedNum = Number('109');
+console.log(parsedNum);
+
+
+//Nan
+console.log(Number('PO'));
