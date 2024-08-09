@@ -41,3 +41,6 @@ console.log(Boolean(undefined));
 let c= 5;
 let v=6;
 console.log(c && v);
+
+console.log('c' || 'v');
+console.log('' || 'v');
