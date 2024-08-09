@@ -19,3 +19,19 @@ console.log(a === b ? 'Coersion' : 'Not coersion')
 
 console.log(Boolean('Pes'));
 console.log(!'Pes');
+
+
+//thruthy values
+console.log(Boolean(1));
+console.log(Boolean('a'));
+console.log(Boolean([]));
+console.log(Boolean({}));
+
+
+//falsy values
+console.log(Boolean(0));
+console.log(Boolean(NaN));
+console.log(Boolean(''));
+console.log(Boolean(false));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
