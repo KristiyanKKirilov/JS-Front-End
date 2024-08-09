@@ -35,3 +35,9 @@ console.log(Boolean(''));
 console.log(Boolean(false));
 console.log(Boolean(null));
 console.log(Boolean(undefined));
+
+
+//return second value if statement is true
+let c= 5;
+let v=6;
+console.log(c && v);
