@@ -12,3 +12,7 @@ console.log(9%2); //1
 
 //exponentiation
 console.log(10 ** 2); //10^2 = 100
+
+let a = 5;
+let b = '5';
+console.log(a === b ? 'Coersion' : 'Not coersion')
