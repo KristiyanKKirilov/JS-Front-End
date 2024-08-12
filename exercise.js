@@ -35,7 +35,16 @@
 //     console.log(result);
 // }
 
-function hackySolve(a,b,c){
-    let largest = Math.max(a,b,c);
-    console.log(`The largest number is ${largest}.`);
+// function hackySolve(a,b,c){
+//     let largest = Math.max(a,b,c);
+//     console.log(`The largest number is ${largest}.`);
+// }
+
+function solve(number){
+    if(number >= 5.50){
+        console.log('Excellent')
+    }
+    else{
+        console.log('Not excellent');
+    }
 }
