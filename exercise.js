@@ -185,22 +185,27 @@
 
 // loop(5, 10);
 
-function sum(number){
-    console.log(
-        number
-        .toString()
-        .split("")
-        .map(Number)
-        .reduce((a,b) => a + b, 0)
-    );
+// function sum(number){
+//     console.log(
+//         number
+//         .toString()
+//         .split("")
+//         .map(Number)
+//         .reduce((a,b) => a + b, 0)
+//     );
 
-}
+// }
 
-sum(543);
+// sum(543);
 
 // function combine(first, second, third){
-//     let str = first + second + third;
-//     console.log(str);
+//     console.log(`${first}${second}${third}`);
 // }
 
 // combine('A', 'B', 'C');
+
+function reverse(first, second, third){
+    console.log(`${third} ${second} ${first}`);
+}
+
+reverse('A','B','C');
