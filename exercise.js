@@ -185,16 +185,23 @@
 
 // loop(5, 10);
 
-function sum(number){
-    let sum = 0;
-    let currentNumber = number;
-    while(currentNumber > 0){
-        sum += currentNumber % 10;
-        currentNumber = parseInt(currentNumber / 10);
-    }
+// function sum(number){
+//     let sum = 0;
+//     let currentNumber = number;
+//     while(currentNumber > 0){
+//         sum += currentNumber % 10;
+//         currentNumber = parseInt(currentNumber / 10);
+//     }
 
-    console.log(sum);
+//     console.log(sum);
 
+// }
+
+// sum(543);
+
+function combine(first, second, third){
+    let str = first + second + third;
+    console.log(str);
 }
 
-sum(543);
+combine('A', 'B', 'C');
