@@ -44,3 +44,8 @@ console.log(c && v);
 
 console.log('c' || 'v');
 console.log('' || 'v');
+
+let firstName;
+console.log(firstName);
+
+let person = null;
