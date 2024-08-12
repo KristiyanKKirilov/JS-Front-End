@@ -171,16 +171,30 @@
 // 1
 
 
-function loop(firstNum, secondNum){
-    let sum = 0 ;
-    let output = "";
-    for(let i = firstNum; i <= secondNum; i++ ){
-        output += `${i} `;
-        sum += i;
+// function loop(firstNum, secondNum){
+//     let sum = 0 ;
+//     let output = "";
+//     for(let i = firstNum; i <= secondNum; i++ ){
+//         output += `${i} `;
+//         sum += i;
+//     }
+
+//     console.log(output.trim());
+//     console.log(`Sum: ${sum}`);
+// }   
+
+// loop(5, 10);
+
+function sum(number){
+    let sum = 0;
+    let currentNumber = number;
+    while(currentNumber > 0){
+        sum += currentNumber % 10;
+        currentNumber = parseInt(currentNumber / 10);
     }
 
-    console.log(output.trim());
-    console.log(`Sum: ${sum}`);
-}   
+    console.log(sum);
 
-loop(5, 10);
+}
+
+sum(543);
