@@ -160,10 +160,27 @@
 // }
 
 
-function calc(number){
-    for (let i = 1; i <= 10; i++) {
-        console.log(`${number} X ${i} = ${number * i}`);
-    }
-}
+// function calc(number){
+//     for (let i = 1; i <= 10; i++) {
+//         console.log(`${number} X ${i} = ${number * i}`);
+//     }
+// }
 
-calc(5);
+// calc(5);
+
+// 1
+
+
+function loop(firstNum, secondNum){
+    let sum = 0 ;
+    let output = "";
+    for(let i = firstNum; i <= secondNum; i++ ){
+        output += `${i} `;
+        sum += i;
+    }
+
+    console.log(output.trim());
+    console.log(`Sum: ${sum}`);
+}   
+
+loop(5, 10);
