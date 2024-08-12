@@ -102,3 +102,15 @@
 // }
 
 // leap(4);
+
+function loop(firstNum, secondNum){
+    let sum = 0 ;
+    for(let i = firstNum; i <= secondNum; i++ ){
+        console.log(i + ' ');
+        sum += i;
+    }
+
+    console.log(`Sum: ${sum}`);
+}   
+
+loop(5,10);
