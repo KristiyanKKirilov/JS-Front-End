@@ -146,15 +146,17 @@
 
 // calcPrice('Weekday', 42);
 
-function calcArea(input){
-    let result;
+// function calcArea(input){
+//     let result;
 
-    let typeofInput = typeof(input);
-    if(typeofInput === 'number'){
-        result = Math.pow(input, 2) * Math.PI;
-        console.log(result.toFixed(2));
-    }
-    else{
-        console.log(`We can not calculate the circle area, because we receive a ${typeof(input)}.`)
-    }
-}
+//     let typeofInput = typeof(input);
+//     if(typeofInput === 'number'){
+//         result = Math.pow(input, 2) * Math.PI;
+//         console.log(result.toFixed(2));
+//     }
+//     else{
+//         console.log(`We can not calculate the circle area, because we receive a ${typeof(input)}.`)
+//     }
+// }
+
+
