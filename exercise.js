@@ -10,27 +10,32 @@
 //     console.log(info);
 // }
 
-function solve(firstNumber, secondNumber, operator){
-    let result;
-    switch(operator){
-        case '+':
-            result = firstNumber + secondNumber;
-            break;
-        case '-':
-            result = firstNumber - secondNumber;
-            break;
-        case '*':
-            result = firstNumber * secondNumber;
-            break;
-        case '/':
-            result = firstNumber / secondNumber;
-            break;
-        case '%': 
-            result = firstNumber % secondNumber;
-            break;
-        case '**':
-            result = firstNumber ** secondNumber;
-            break;        
-    }
-    console.log(result);
+// function solve(firstNumber, secondNumber, operator){
+//     let result;
+//     switch(operator){
+//         case '+':
+//             result = firstNumber + secondNumber;
+//             break;
+//         case '-':
+//             result = firstNumber - secondNumber;
+//             break;
+//         case '*':
+//             result = firstNumber * secondNumber;
+//             break;
+//         case '/':
+//             result = firstNumber / secondNumber;
+//             break;
+//         case '%': 
+//             result = firstNumber % secondNumber;
+//             break;
+//         case '**':
+//             result = firstNumber ** secondNumber;
+//             break;        
+//     }
+//     console.log(result);
+// }
+
+function hackySolve(a,b,c){
+    let largest = Math.max(a,b,c);
+    console.log(`The largest number is ${largest}.`);
 }
