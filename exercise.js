@@ -210,10 +210,18 @@
 
 // reverse('A','B','C');
 
-function calc(fruit, grams, price){
-    let weightInKilos = grams / 1000;
-    let enoughPrice = price * weightInKilos;
-    console.log(`I need $${enoughPrice.toFixed(2)} to buy ${weightInKilos.toFixed(2)} kilograms ${fruit}.`);
-}
+// function calc(fruit, grams, price){
+//     let weightInKilos = grams / 1000;
+//     let enoughPrice = price * weightInKilos;
+//     console.log(`I need $${enoughPrice.toFixed(2)} to buy ${weightInKilos.toFixed(2)} kilograms ${fruit}.`);
+// }
 
-calc("orange", 2500, 1.80);
+// calc("orange", 2500, 1.80);
+
+
+let a = 'computer';
+const arr= a.split("");
+
+for(prop in arr){
+    console.log(arr[prop]);
+}
