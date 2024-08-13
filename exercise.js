@@ -204,8 +204,16 @@
 
 // combine('A', 'B', 'C');
 
-function reverse(first, second, third){
-    console.log(`${third} ${second} ${first}`);
+// function reverse(...args){
+//     console.log(args.reverse().join(" "));
+// }
+
+// reverse('A','B','C');
+
+function calc(fruit, grams, price){
+    let weightInKilos = grams / 1000;
+    let enoughPrice = price * weightInKilos;
+    console.log(`I need $${enoughPrice.toFixed(2)} to buy ${weightInKilos.toFixed(2)} kilograms ${fruit}.`);
 }
 
-reverse('A','B','C');
+calc("orange", 2500, 1.80);
