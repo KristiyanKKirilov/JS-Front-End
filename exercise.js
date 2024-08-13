@@ -248,45 +248,72 @@
 
 // sameNumbers(22222);
 
-function ticketSpeed(speed, area){
-    let limit;
-    let status;
-    let output;
-    switch(area){
-        case 'motorway':
-            limit = 130;
-            break;
-        case 'interstate':
-            limit = 90;
-            break;
-        case 'city':
-            limit = 50;
-            break;
-        case 'residential':
-            limit = 20;
-            break;        
-    }
+// function ticketSpeed(speed, area){
+//     let limit;
+//     let status;
+//     let output;
+//     switch(area){
+//         case 'motorway':
+//             limit = 130;
+//             break;
+//         case 'interstate':
+//             limit = 90;
+//             break;
+//         case 'city':
+//             limit = 50;
+//             break;
+//         case 'residential':
+//             limit = 20;
+//             break;        
+//     }
 
-    if(speed > limit){
-        let speeding = speed - limit;
+//     if(speed > limit){
+//         let speeding = speed - limit;
 
-        if(speeding > 40){
-            status = 'reckless driving';
+//         if(speeding > 40){
+//             status = 'reckless driving';
+//         }
+//         else if(speeding > 20){
+//             status = 'excessive speeding';
+//         }
+//         else{
+//             status = 'speeding';
+//         }
+
+//         output = `The speed is ${speeding} km/h faster than the allowed speed of ${limit} - ${status}`;
+//     }
+//     else{
+//         output = `Driving ${speed} km/h in a ${limit} zone`;
+//     }
+
+//     console.log(output);
+// }
+
+// ticketSpeed(120, 'interstate');
+
+function cook(number, ...args){
+    let numberParsed = parseInt(number);
+    for (let i = 0; i < 5; i++) {
+        switch(args[i]){
+            case 'chop':
+                numberParsed /= 2;
+                break;
+            case 'dice':
+                numberParsed = Math.sqrt(numberParsed);
+                break;
+            case 'spice':
+                numberParsed += 1;
+                break;
+            case 'bake':
+                numberParsed *= 3;
+                break;
+            case 'fillet':
+                numberParsed *= 0.8;
+                break;
         }
-        else if(speeding > 20){
-            status = 'excessive speeding';
-        }
-        else{
-            status = 'speeding';
-        }
 
-        output = `The speed is ${speeding} km/h faster than the allowed speed of ${limit} - ${status}`;
+        console.log(numberParsed);
     }
-    else{
-        output = `Driving ${speed} km/h in a ${limit} zone`;
-    }
-
-    console.log(output);
 }
 
-ticketSpeed(120, 'interstate');
+cook('32', 'chop', 'chop', 'chop', 'chop', 'chop');
