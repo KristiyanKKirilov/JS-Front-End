@@ -219,9 +219,31 @@
 // calc("orange", 2500, 1.80);
 
 
-let a = 'computer';
-const arr= a.split("");
+// let a = 'computer';
+// const arr= a.split("");
 
-for(prop in arr){
-    console.log(arr[prop]);
+// for(prop in arr){
+//     console.log(arr[prop]);
+// }
+
+function sameNumbers(number){
+    let str = number.toString();
+
+    let sum = number
+       .toString()
+         .split("")
+         .map(Number)
+         .reduce((a,b) => a + b, 0);
+         
+    let count = str.length;
+    if(parseInt(str[0] * count) == sum){
+        console.log('true');
+        console.log(sum);
+    }
+    else{
+        console.log('false');
+        console.log(sum);
+    }
 }
+
+sameNumbers(22222);
