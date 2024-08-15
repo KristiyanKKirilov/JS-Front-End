@@ -122,3 +122,10 @@ arr.forEach(function(element){
 arr.forEach(element => {
     console.log(element);
 })
+
+//Map - creating new array with the values based on the original values - non mutating
+let lowerCaseCars = arr.map(car =>{
+    return car.toLowerCase();
+})
+
+console.log(lowerCaseCars);
