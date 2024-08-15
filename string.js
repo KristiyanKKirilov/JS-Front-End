@@ -28,3 +28,7 @@ console.log(secondDolorIndex);
 //lastIndexOf - searching last element matching the condition
 const secondDolorIndex2 = text.lastIndexOf('dolor');
 console.log(secondDolorIndex2);
+
+//Substring - takes part of the string with given firstIndex as parameter and second is the end by default
+const subText = text.substring(0, firstDolorIndex - 2);
+console.log(subText);
