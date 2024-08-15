@@ -161,3 +161,10 @@ const array1 = [5, 12, 8, 130, 144];
 const isLargerThanTen = (element) => element > 12;
 console.log(array1.findIndex(isLargerThanTen));
 
+//any.prototype.at() - returns item at that index, allowing positive and negative numbers, 
+//negative nubmers count back from the last item in the array
+const array2 = [5, 12, 8, 130, 144];
+let index = 2;
+console.log(`An index of ${index} returns ${array2.at(index)}`);
+index = -2;
+console.log(`An index of ${index} returns ${array2.at(index)}`);
