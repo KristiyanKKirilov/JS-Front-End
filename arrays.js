@@ -77,3 +77,13 @@ console.log(copyNames === namess);
 //reversing array without mutation
 let reversingNames = namess.slice().reverse();
 console.log(reversingNames);
+
+let arr = ['BMW', 'Mercedes', 'Audi', 'Toyota'];
+
+//check if element exists
+const hasBmw = arr.includes('BMW');
+console.log(hasBmw)
+
+//check if element exists after given index
+const hasAudi = arr.includes('Audi', 3);
+console.log(hasAudi);
