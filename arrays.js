@@ -50,3 +50,7 @@ console.log(namess);
 let removedNames = namess.splice(0, 2);
 console.log(namess);
 console.log(removedNames);
+
+//reversing array but the new const is not new element, its refering to the same address in the heap
+namess.reverse();
+console.log(namess);
