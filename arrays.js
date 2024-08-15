@@ -54,3 +54,26 @@ console.log(removedNames);
 //reversing array but the new const is not new element, its refering to the same address in the heap
 namess.reverse();
 console.log(namess);
+
+//Joining array into a  (non mutating)
+let namesAsString = namess.join(', ');
+console.log(namesAsString);
+
+//slice - taking sub array and assigning to new array (non-mutating)
+let slicedArray = namess.slice(1, 3);
+console.log(slicedArray);
+
+//takes all elements from the given index to the end
+let endNames = namess.slice(1);
+console.log(endNames);
+
+//making a copy of array
+let copyNames = namess.slice();
+console.log(copyNames);
+
+//diferent refferrence 
+console.log(copyNames === namess);
+
+//reversing array without mutation
+let reversingNames = namess.slice().reverse();
+console.log(reversingNames);
