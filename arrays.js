@@ -139,3 +139,11 @@ let carWithL = arr.find(car => {
 
 console.log(carWithL);
 
+//All iterative methods require function
+//Filter - find all elements based on condition - non-mutating
+let carsWithB = arr.filter(car =>{
+    return car.startsWith('B');
+})
+
+console.log(carsWithB);
+
