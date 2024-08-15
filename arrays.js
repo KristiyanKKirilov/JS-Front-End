@@ -104,3 +104,21 @@ console.log(foundBMW);
 //NON-Existing element returns -1 (indexOf)
 const nonexist = arr.indexOf('g');
 console.log(nonexist);
+
+//foreach - execute code for every element (non-mutating) iterative
+
+function printElement(element){
+    console.log(element);
+}
+
+arr.forEach(printElement);
+
+//second option anonymous function
+arr.forEach(function(element){
+    console.log(element);
+})
+
+//third option arrow function 
+arr.forEach(element => {
+    console.log(element);
+})
