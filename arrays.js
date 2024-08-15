@@ -168,3 +168,9 @@ let index = 2;
 console.log(`An index of ${index} returns ${array2.at(index)}`);
 index = -2;
 console.log(`An index of ${index} returns ${array2.at(index)}`);
+
+//some - check if at least one element match the condition given
+const array3 = [1,2,3,4];
+const even = (element) => element % 2 == 0;
+console.log(array3.some(even));
+
