@@ -147,3 +147,12 @@ let carsWithB = arr.filter(car =>{
 
 console.log(carsWithB);
 
+//fill - fills an array with given value from start to end index
+const newArr = [1,2,3,4];
+console.log(newArr.fill(3, 1, newArr.length));
+
+//can be filled without start and end index but it fill the whole array
+console.log(newArr.fill(2));
+//can be filled from start index till the end only with start index given
+console.log(newArr.fill(0, 2));
+
