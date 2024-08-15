@@ -156,3 +156,8 @@ console.log(newArr.fill(2));
 //can be filled from start index till the end only with start index given
 console.log(newArr.fill(0, 2));
 
+//findIndex - returns the first element of the array that satisfied the provided condition
+const array1 = [5, 12, 8, 130, 144];
+const isLargerThanTen = (element) => element > 12;
+console.log(array1.findIndex(isLargerThanTen));
+
