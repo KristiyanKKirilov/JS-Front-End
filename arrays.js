@@ -129,3 +129,13 @@ let lowerCaseCars = arr.map(car =>{
 })
 
 console.log(lowerCaseCars);
+
+//Find a car that start with the letter L
+//returns the first met element in the array
+arr.push('Lancia');
+let carWithL = arr.find(car => {
+    return car.startsWith('L');
+})
+
+console.log(carWithL);
+
