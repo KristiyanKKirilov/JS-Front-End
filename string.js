@@ -29,6 +29,15 @@ console.log(secondDolorIndex);
 const secondDolorIndex2 = text.lastIndexOf('dolor');
 console.log(secondDolorIndex2);
 
-//Substring - takes part of the string with given firstIndex as parameter and second is the end by default
+//substring - takes part of the string with given firstIndex as parameter and second is the end by default
 const subText = text.substring(0, firstDolorIndex - 2);
 console.log(subText);
+
+//replace - replace the first occurance of the given parameter
+const replaceDolor = text.replace('dolor', 'dolar');
+console.log(replaceDolor);
+
+//replaceAll - replace all occurances of the given parameter
+const replaceAllDolor = text.replaceAll('dolor', 'dolar');
+console.log(text);
+console.log(replaceAllDolor);
