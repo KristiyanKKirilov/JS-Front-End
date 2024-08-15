@@ -87,3 +87,20 @@ console.log(hasBmw)
 //check if element exists after given index
 const hasAudi = arr.includes('Audi', 3);
 console.log(hasAudi);
+
+//return index of element
+const indexOfBMW = arr.indexOf('BMW');
+console.log(indexOfBMW);
+
+//indexof - returns the first met element with the given name
+//lastIndexOf - return the last met element with the given name
+arr.push('BMW');
+const lastIndexOfBMW = arr.lastIndexOf('BMW');
+console.log(lastIndexOfBMW);
+//indexOf with second parameter, the start index of searching
+const foundBMW = arr.indexOf('BMW', 1);
+console.log(foundBMW);
+
+//NON-Existing element returns -1 (indexOf)
+const nonexist = arr.indexOf('g');
+console.log(nonexist);
