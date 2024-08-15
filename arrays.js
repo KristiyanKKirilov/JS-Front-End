@@ -171,6 +171,11 @@ console.log(`An index of ${index} returns ${array2.at(index)}`);
 
 //some - check if at least one element match the condition given
 const array3 = [1,2,3,4];
+//first option 
 const even = (element) => element % 2 == 0;
 console.log(array3.some(even));
+//second option
+console.log(array3.some(element => {
+    return element % 2 == 0;
+}));
 
