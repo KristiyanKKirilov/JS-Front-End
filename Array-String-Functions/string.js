@@ -58,3 +58,10 @@ console.log(stringWithSpaces.trim().replace('  ', ' '));
 let nam = 'My name is John';
 console.log(nam.startsWith('My'));
 console.log(nam.endsWith('John'));
+
+//Pad string - transform decimal to binary number
+let number = 10;
+let bin = number.toString(2);
+console.log(bin);
+
+//Pad
