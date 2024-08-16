@@ -64,4 +64,7 @@ let number = 10;
 let bin = number.toString(2);
 console.log(bin);
 
-//Pad
+//Pad string - transform decimal to hexadecimal number
+let number1 = 10;
+let hex = number1.toString(16);
+console.log(hex);
