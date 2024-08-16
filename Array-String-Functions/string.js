@@ -62,7 +62,7 @@ console.log(nam.endsWith('John'));
 //Pad string - transform decimal to binary number
 let number = 10;
 let bin = number.toString(2);
-console.log(bin);
+console.log(bin.padStart(8, '0')); //showing the binary number like 8 bits and filling the spaces with zeros
 
 //Pad string - transform decimal to hexadecimal number
 let number1 = 10;
