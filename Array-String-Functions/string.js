@@ -45,3 +45,16 @@ console.log(replaceAllDolor);
 //includes - checks if element exists
 const hasDolor = text.includes('dolor');
 console.log(hasDolor);
+
+//trim 
+const stringWithSpaces = '  some  text  ';
+console.log(stringWithSpaces);
+console.log(stringWithSpaces.trimEnd());
+console.log(stringWithSpaces.trimStart());
+console.log(stringWithSpaces.trim());
+console.log(stringWithSpaces.trim().replace('  ', ' '));
+
+//startsWith - endsWith
+let nam = 'My name is John';
+console.log(nam.startsWith('My'));
+console.log(nam.endsWith('John'));
