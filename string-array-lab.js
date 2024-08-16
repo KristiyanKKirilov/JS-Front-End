@@ -44,3 +44,11 @@ function secondEvenOdd(numbers){
 
     console.log(totalEven - totalOdd);
 }
+
+//4
+function subString(word, firstIndex, secondIndex){
+    const result = word.substring(firstIndex, firstIndex + secondIndex);
+    console.log(result);
+}
+
+subString('SkipWord', 4, 7);
