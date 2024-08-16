@@ -52,3 +52,12 @@ function subString(word, firstIndex, secondIndex){
 }
 
 subString('SkipWord', 4, 7);
+
+//5 
+function censore(text, word){
+    const symbol = '*';
+    const result = text.replaceAll(word, symbol.repeat(word.length));
+    console.log(result);
+}
+
+censore('A small sentence with some words', 'small');
