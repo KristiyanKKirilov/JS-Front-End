@@ -61,3 +61,11 @@ function censore(text, word){
 }
 
 censore('A small sentence with some words', 'small');
+
+//6
+function countOccurences(text, word){
+    const words = text.split(' ').filter(w => w == word);
+    console.log(words.length);
+}
+
+countOccurences('softuni is great place for learning new programming languages','softuni');
