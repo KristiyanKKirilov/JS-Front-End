@@ -67,5 +67,12 @@ function countOccurences(text, word){
     const words = text.split(' ').filter(w => w == word);
     console.log(words.length);
 }
-//6 second option
 countOccurences('softuni is great place for learning new programming languages','softuni');
+
+//6 second option
+function countOccurences2(text = '', word){
+    const pattern = /\bsoftuni\b/g;
+    const words = text.match(pattern);
+    console.log(words.length);
+}
+countOccurences2('softuni is great place for learning new programming languages','softuni');
