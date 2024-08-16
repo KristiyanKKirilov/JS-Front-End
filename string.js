@@ -41,3 +41,4 @@ console.log(replaceDolor);
 const replaceAllDolor = text.replaceAll('dolor', 'dolar');
 console.log(text);
 console.log(replaceAllDolor);
+
