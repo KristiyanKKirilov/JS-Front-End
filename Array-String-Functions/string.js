@@ -42,3 +42,6 @@ const replaceAllDolor = text.replaceAll('dolor', 'dolar');
 console.log(text);
 console.log(replaceAllDolor);
 
+//includes - checks if element exists
+const hasDolor = text.includes('dolor');
+console.log(hasDolor);
