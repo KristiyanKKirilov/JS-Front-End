@@ -23,18 +23,19 @@ printN(['5', '20', '31',  '4', '20'],2);
 //2 -second option
 function printN2(input, number){
     console.log(input.filter((_, i) => i % number == 0));
-    
+
 }
 
 printN2(['5', '20', '31',  '4', '20'],2);
 
 //3
 function sortAscending(names){
-    names.sort();
-    for (let i = 1; i <= names.length; i++) {
-        console.log(`${i}.${names[i - 1]}`);
-        
-    }
+    names.sort((a,b) => a.localeCompare(b))
+              .map((name, index) => {
+                const pos = index + 1;
+                console.log(`${pos}.${name}`);
+              });
+    
     
 }
 
