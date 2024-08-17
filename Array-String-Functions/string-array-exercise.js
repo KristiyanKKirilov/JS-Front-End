@@ -56,6 +56,23 @@ function mixedSort(numbers){
         }
         if(reversedRightSide[i]){
             result.push(reversedRightSide[i])
+        }        
+    }
+    return result;
+}
+mixedSort([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
+
+//4 - second option
+function mixedSort2(numbers){
+    let copy = numbers.slice().sort((a,b) => a -b);
+    
+    const result = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if(i % 2 == 0){
+            result.push(copy.shift());            
+        }
+        else{
+            result.push(copy.pop());            
         }
         
     }
@@ -63,5 +80,17 @@ function mixedSort(numbers){
     return result;
 }
 
+mixedSort2([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
+//5
+function replaceWord(words, text){
+    const arrWords = words.split(', ');
+    let result = text;
+    arrWords.forEach((word) => {
+        const searchValue = '*'.repeat(word.length);
+        result = result.replace(searchValue, word);
+    });
 
-mixedSort([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
+    console.log(result);
+}
+
+replaceWord('great, learning', 'softuni is ***** place for ******** new programming languages');
