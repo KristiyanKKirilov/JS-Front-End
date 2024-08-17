@@ -120,3 +120,11 @@ function matchWord(word, text){
 }
 
 matchWord('javascript','JavaScript is the best programming language');
+
+//8
+function splitCamelCase(text){
+    const result = text.split(/(?=[A-Z])/);
+    console.log(result.join(', '));
+}
+
+splitCamelCase('SplitMeIfYouCanHaHaYouCantOrYouCan');
