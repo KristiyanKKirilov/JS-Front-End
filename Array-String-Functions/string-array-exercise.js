@@ -94,3 +94,16 @@ function replaceWord(words, text){
 }
 
 replaceWord('great, learning', 'softuni is ***** place for ******** new programming languages');
+
+//6
+
+function hashTagLetters(template){
+    const pattern = /#[A-Za-z]+/gm;
+    const matches = template.matchAll(pattern);
+
+    for (const match of matches) {
+        console.log(match[0].substring(1)); 
+    }
+}
+
+hashTagLetters('Nowadays everyone uses # to tag a #special word in #socialMedia');
