@@ -40,3 +40,28 @@ function sortAscending(names){
 }
 
 sortAscending(["John", "Bob K", "Christina", "Ema", "John", "Bob A", "Christina", "Ema"]);
+
+//4
+function mixedSort(numbers){
+    numbers.sort((a,b) => a - b);
+    const mid = numbers.length / 2;
+    const leftSide = numbers.slice(0, mid);
+    const rightSide = numbers.slice(mid);
+    const reversedRightSide = rightSide.slice().reverse();
+
+    const result = [];
+    for (let i = 0; i < mid; i++) {
+        if(leftSide[i]){
+            result.push(leftSide[i]);
+        }
+        if(reversedRightSide[i]){
+            result.push(reversedRightSide[i])
+        }
+        
+    }
+
+    return result;
+}
+
+
+mixedSort([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
