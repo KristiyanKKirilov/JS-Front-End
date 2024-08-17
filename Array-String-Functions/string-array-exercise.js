@@ -1,12 +1,10 @@
 //1
 function rotation(numbers, rotateNum){
-    while(rotateNum){
-        let num = numbers.shift();
-        numbers.push(num);
-        rotateNum--;
-    }
-
-    console.log(numbers.join(' '));
+    const cuttOffIndex = rotateNum % numbers.length;
+    const leftSide = numbers.slice(0, cuttOffIndex);
+    const rightSide = numbers.slice(cuttOffIndex);
+    const resultArr = rightSide.concat(leftSide);
+    console.log(resultArr.join(' '));
 }
 
 rotation([51, 47, 32, 61, 21], 2);
@@ -22,3 +20,15 @@ function printN(input, number){
 }
 
 printN(['5', '20', '31',  '4', '20'],2);
+
+//3
+function sortAscending(names){
+    names.sort();
+    for (let i = 1; i <= names.length; i++) {
+        console.log(`${i}.${names[i - 1]}`);
+        
+    }
+    
+}
+
+sortAscending(["John", "Bob K", "Christina", "Ema", "John", "Bob A", "Christina", "Ema"]);
