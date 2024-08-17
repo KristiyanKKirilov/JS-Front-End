@@ -107,3 +107,16 @@ function hashTagLetters(template){
 }
 
 hashTagLetters('Nowadays everyone uses # to tag a #special word in #socialMedia');
+
+//7
+function matchWord(word, text){   
+    const match = text.split(' ').find(x => x.toLowerCase() === word.toLowerCase());
+    if(match){
+        console.log(word);
+    }
+    else{
+        console.log(`${word} not found!`);
+    }
+}
+
+matchWord('javascript','JavaScript is the best programming language');
