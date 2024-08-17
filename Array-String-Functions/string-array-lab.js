@@ -30,6 +30,7 @@ function evenOdd(numbers){
 const array3 = [1,2,3,4,5,6];
 evenOdd(array3);
 
+//3 - second option
 function secondEvenOdd(numbers){
     let totalEven = 0;
     let totalOdd = 0;
@@ -71,8 +72,8 @@ countOccurences('softuni is great place for learning new programming languages',
 
 //6 second option
 function countOccurences2(text = '', word){
-    const pattern = /\bsoftuni\b/g;
-    const words = text.match(pattern);
+    const pattern = new RegExp(`\\b${word}\\b`, 'g');
+    const words = text.match(pattern) ?? [];
     console.log(words.length);
 }
 countOccurences2('softuni is great place for learning new programming languages','softuni');
