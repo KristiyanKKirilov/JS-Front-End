@@ -12,3 +12,13 @@ function rotation(numbers, rotateNum){
 rotation([51, 47, 32, 61, 21], 2);
 
 //2
+function printN(input, number){
+    const result = [];
+    for (let i = 0; i < input.length; i+= number) {
+        console.log(input[i]);        
+    }
+
+    return result;
+}
+
+printN(['5', '20', '31',  '4', '20'],2);
