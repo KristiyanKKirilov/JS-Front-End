@@ -100,3 +100,19 @@ const calculate = (numOne, numTwo, operator) =>{
 }
 
 console.log(calculate(6,5, 'add'));
+
+
+//6
+function positiveOrNegativeOutput(firstNum, secondNum, thirdNum){
+    const numbers = [firstNum, secondNum, thirdNum];
+    const isNegative = num => num < 0;
+    const result = numbers.filter(isNegative);
+    if(result.length % 2 == 0){
+        console.log('Positive');
+    }
+    else{
+        console.log('Negative');
+    }
+}
+
+positiveOrNegativeOutput(-1,-2,-3);
