@@ -28,9 +28,9 @@ function printLine(){
 printLine();
 
 //function as refference type
-function executeOperation(operandOne, operandTwo, operation){
+function executeOperation(operation, operandOne, operandTwo){
     const result = operation(operandOne, operandTwo);
-    console.log(result);
+    return result;
 }
 
 function sum(a,b){
@@ -48,4 +48,12 @@ function divide(a, b){
 function multiply(a,b){
     return a * b;
 }
-executeOperation(4, 5, multiply);
+console.log(executeOperation(multiply, 4, 5));
+
+//pass anonymous function as argument
+const operationReesylt = executeOperation(function(a,b){
+    return a + b;
+}, 10, 20);
+
+console.log(operationReesylt);
+
