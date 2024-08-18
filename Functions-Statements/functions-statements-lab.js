@@ -40,3 +40,27 @@ function repeat(str, count){
 }
 
 repeat('top', 2);
+
+//4
+function calcPrice(product, count){
+    let price;
+    switch(product){
+        case 'water': 
+        price = 1;
+        break;
+        case 'coffee':
+        price = 1.5;
+        break;
+        case 'coke':
+            price = 1.4;
+        break;
+        case 'snacks':
+            price = 2;
+            break;
+
+    }
+
+    console.log((price * count).toFixed(2));
+}
+
+calcPrice('water', 5);
