@@ -61,4 +61,8 @@ console.log(operationReesylt);
 const opRes = executeOperation((a,b) => a * b, 2,3);
 console.log(opRes);
 
+//function assignment
+const divided = (a,b) => a /b;
+console.log(divided(9,3));
+
 
