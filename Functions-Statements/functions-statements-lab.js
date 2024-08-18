@@ -64,3 +64,25 @@ function calcPrice(product, count){
 }
 
 calcPrice('water', 5);
+
+//5
+function calc(firstNum, secondNum, operator){
+    let sum;
+    switch(operator){
+        case 'multiply': 
+            sum = firstNum * secondNum;
+        break;
+        case 'divide':
+            sum = firstNum / secondNum;
+        break;
+        case 'add':
+            sum = firstNum + secondNum;
+        break;
+        case 'subtract':
+            sum = firstNum - secondNum;
+            break;
+
+    }
+
+    console.log(sum);
+}
