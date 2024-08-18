@@ -57,3 +57,8 @@ const operationReesylt = executeOperation(function(a,b){
 
 console.log(operationReesylt);
 
+//pass arrow function as argument
+const opRes = executeOperation((a,b) => a * b, 2,3);
+console.log(opRes);
+
+
