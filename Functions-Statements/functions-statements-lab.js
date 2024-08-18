@@ -1,3 +1,4 @@
+//1
 function grade(grade){
     let status;
     if(grade < 3){
@@ -25,3 +26,10 @@ function grade(grade){
 }
 
 grade(2.30);
+
+//2
+function power(num, power){
+    console.log(Math.pow(num, power));
+}
+
+power(2,8);
