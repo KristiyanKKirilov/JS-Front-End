@@ -95,3 +95,10 @@ const doubleExpressionBody = (number) => number * 2;
 //arrow function with expression body with single parameter
 const doubleSingleParameterExpressionBody = number => number * 2;
 
+//IIFE - Immediately invoked function expression
+(function(){
+    console.log('IIFE');
+})();
+
+//IIAFE - Immediately invoked arrow function expression
+(() => console.log('IIAFE'))();
