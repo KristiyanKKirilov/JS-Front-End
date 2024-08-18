@@ -33,3 +33,10 @@ function power(num, power){
 }
 
 power(2,8);
+
+//3
+function repeat(str, count){
+    console.log(str.repeat(count));
+}
+
+repeat('top', 2);
