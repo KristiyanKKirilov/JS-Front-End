@@ -78,3 +78,20 @@ function buildOperator(opName){
 
 const sumOp = buildOperator('sum');
 console.log(sumOp(1,3));
+
+//normal function
+const double = function (number){
+    return number * 2; 
+}
+
+//arrow function with statement body
+const doubleStatementBody = (number) =>{
+    return number * 2;
+}
+
+//arrow function with expression body
+const doubleExpressionBody = (number) => number * 2;
+
+//arrow function with expression body with single parameter
+const doubleSingleParameterExpressionBody = number => number * 2;
+
