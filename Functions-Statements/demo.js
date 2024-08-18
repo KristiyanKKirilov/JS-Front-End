@@ -19,3 +19,10 @@ const subtract = function (a,b){
 };
 
 subtract(5,4);
+
+//no parameter function
+function printLine(){
+    console.log('-------');
+}
+
+printLine();
