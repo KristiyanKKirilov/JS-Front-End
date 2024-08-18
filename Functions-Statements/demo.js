@@ -65,4 +65,16 @@ console.log(opRes);
 const divided = (a,b) => a /b;
 console.log(divided(9,3));
 
+//returned by antoher function
+function buildOperator(opName){
+    switch(opName){
+        case 'sum':
+            return function(a,b){
+                return a + b;
+            };
+        default: break;
+    }
+}
 
+const sumOp = buildOperator('sum');
+console.log(sumOp(1,3));
