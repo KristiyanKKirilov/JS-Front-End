@@ -86,3 +86,17 @@ function calc(firstNum, secondNum, operator){
 
     console.log(sum);
 }
+
+//5 - second alternative
+const calculate = (numOne, numTwo, operator) =>{
+    const operations = {
+        multiply: (a,b) => a * b,
+        divide: (a,b) => b !== 0 ? a / b : 'Cannot be divided by zero',
+        add: (a,b) => a + b,
+        subtract: (a,b) => a - b
+    };
+
+    return (operations[operator] || (() => 'Error'))(numOne, numTwo);
+}
+
+console.log(calculate(6,5, 'add'));
