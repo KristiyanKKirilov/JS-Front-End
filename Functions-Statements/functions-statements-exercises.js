@@ -18,3 +18,24 @@ function sumAndSubtract(firstNum, secondNum, thirdNum){
 }
 
 sumAndSubtract(23, 6, 10);
+
+//3 
+console.log('-3-')
+
+function returnASCIISequence(firstChar, secondChar){
+    const firstCharUnicode = firstChar.charCodeAt(0);
+    const secondCharUnicode = secondChar.charCodeAt(0);
+    let output = '';
+    let startIndex =  firstCharUnicode < secondCharUnicode ? firstCharUnicode : secondCharUnicode;
+    let endIndex = startIndex !== firstCharUnicode ? firstCharUnicode : secondCharUnicode;
+    for (let i = startIndex + 1; i < endIndex; i++) {
+        let char = String.fromCharCode(i);
+        output += `${char} `;        
+    }
+
+    console.log(output.trim());
+}
+
+returnASCIISequence('#', ':');
+
+
