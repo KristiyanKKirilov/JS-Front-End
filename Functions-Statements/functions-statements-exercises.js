@@ -74,3 +74,41 @@ function palindrome(numbers){
 }
 
 palindrome([123,323,421,121]);
+
+//6
+console.log('-6-');
+
+function validator(pass){
+    let regex = /^(?=.*\d.*\d)[A-Za-z\d]+$/;
+    let isValid = pass.length >= 6 && pass.length <= 10;
+    if(isValid && regex.test(pass)){
+        console.log('')
+    }
+}
+
+//7
+
+function printMatrix(number){
+    let matrix = [];
+    
+    for (let i = 0; i < number; i++) {
+        matrix[i] = [];
+
+        for (let j = 0; j < number; j++) {
+            matrix[i][j] = number;
+        }
+    }
+
+    for (let i = 0; i < number; i++) {
+        let output = "";
+        
+        for (let j = 0; j < number; j++) {
+            output += `${matrix[i][j]} `;
+        }
+
+        console.log(output.trimEnd());
+    
+    }
+}
+
+printMatrix(3);
