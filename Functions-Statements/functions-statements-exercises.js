@@ -158,4 +158,36 @@ function printNxMatrix(x){
 
 printNxMatrix(9);
 
+//8
+
+function isNumberPerfect(number){
+    const negativeMessage = "It's not so perfect.";
+    if(number < 0 || !Number.isInteger(number)){
+        console.log(negativeMessage);
+        return;
+    }
+
+    const half = number / 2;
+    const numbers = [];
+    let totalSum = 0;
+
+    for (let i = 1; i <= half; i++) {
+        if(number % i === 0){
+            numbers.push(i);
+            totalSum += i;
+        }
+    }
+
+    if(totalSum === number){
+        console.log("We have a perfect number!");
+        return;
+    }
+    else{
+        console.log(negativeMessage);
+    }
+
+}
+
+isNumberPerfect(6);
+
 
