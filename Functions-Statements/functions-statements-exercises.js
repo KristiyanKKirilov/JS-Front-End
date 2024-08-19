@@ -39,3 +39,18 @@ function returnASCIISequence(firstChar, secondChar){
 returnASCIISequence('#', ':');
 
 
+//4
+console.log('-4-');
+
+function evenOddSum(number){
+    const numbers = number.toString().split("").map(num => parseInt(num));
+    const even = element => element % 2 === 0;
+    const odd = element => element % 2 !== 0;
+    const evenElements = numbers.filter(even);
+    const oddElements = numbers.filter(odd);
+    const evenSum = evenElements.reduce((totalSum, currentValue) => totalSum + currentValue, 0);
+    const oddSum = oddElements.reduce((totalSum, currentValue) => totalSum + currentValue, 0);
+    console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`);
+}
+
+evenOddSum(1000435);
