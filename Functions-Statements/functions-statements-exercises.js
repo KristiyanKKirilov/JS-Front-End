@@ -54,3 +54,23 @@ function evenOddSum(number){
 }
 
 evenOddSum(1000435);
+
+//5
+console.log('-5-');
+
+function palindrome(numbers){
+    const arr = numbers.map(num => num.toString());
+
+    for (const element of arr) {
+        let elem = element.split("");
+        let reversed = elem.slice().reverse().join("");
+        if(element === reversed){
+            console.log(true);
+        }
+        else{
+            console.log(false);
+        }
+    }
+}
+
+palindrome([123,323,421,121]);
