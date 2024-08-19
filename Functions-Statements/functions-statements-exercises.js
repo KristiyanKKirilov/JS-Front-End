@@ -78,16 +78,47 @@ palindrome([123,323,421,121]);
 //6
 console.log('-6-');
 
-function validator(pass){
-    let regex = /^(?=.*\d.*\d)[A-Za-z\d]+$/;
-    let isValid = pass.length >= 6 && pass.length <= 10;
-    if(isValid && regex.test(pass)){
-        console.log('')
+function passwordValidator(password){
+    
+    function hasCorrectLength(pass){
+        const minLength = 6;
+        const maxLength = 10;
+
+        return pass.length >= minLength && pass.length <= maxLength;
     }
+
+    function hasValidCharacters(pass){
+        const regex = /^[A-za-z\d]+$/;
+        return regex.test(pass);
+    }
+
+    function minimalDigitCount(pass){
+        const regex = /[0-9]{2,}/;
+        return regex.test(pass);
+    }
+    let messages = [];
+
+    if(!hasCorrectLength(password)){
+        messages.push("Password must be between 6 and 10 characters");       
+    }
+    if(!hasValidCharacters(password)){
+        messages.push("Password must consist only of letters and digits");      
+    }
+    if(!minimalDigitCount(password)){
+        messages.push("Password must have at least 2 digits");        
+    }
+    
+    if(messages.length === 0){
+        messages.push("Password is valid");
+    }
+    
+    messages.forEach((msg) => console.log(msg));
 }
 
-//7
+passwordValidator('MyPass123');
 
+//7
+console.log('-7-');
 function printMatrix(number){
     let matrix = [];
     
@@ -101,7 +132,7 @@ function printMatrix(number){
 
     for (let i = 0; i < number; i++) {
         let output = "";
-        
+
         for (let j = 0; j < number; j++) {
             output += `${matrix[i][j]} `;
         }
@@ -112,3 +143,19 @@ function printMatrix(number){
 }
 
 printMatrix(3);
+
+//7 - second option
+
+function printNxMatrix(x){
+    const getNumberNTimes = (number, separator = " ") => {
+        return `${number}${separator}`.repeat(number).trim();
+    };
+
+    for (let i = 0; i < x; i++) {
+        console.log(getNumberNTimes(x));        
+    }
+}
+
+printNxMatrix(9);
+
+
