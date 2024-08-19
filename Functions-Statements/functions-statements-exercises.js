@@ -159,7 +159,7 @@ function printNxMatrix(x){
 printNxMatrix(9);
 
 //8
-
+console.log('-8-');
 function isNumberPerfect(number){
     const negativeMessage = "It's not so perfect.";
     if(number < 0 || !Number.isInteger(number)){
@@ -190,4 +190,26 @@ function isNumberPerfect(number){
 
 isNumberPerfect(6);
 
+//9
+console.log('-9-');
+
+function printLoadingBar(number){
+    const completeMessage = "100% Complete!";
+    const loadingMessage = "Still loading...";
+    const percent = number / 10;
+    const loadingBar = '.'.repeat(10).split("");
+    const result = loadingBar.fill('%', 0, percent).join("");
+
+    if(number === 100){
+        console.log(completeMessage);
+        console.log(`[${result}]`);
+    }
+    else{
+        console.log(`${number}% [${result}]`);
+        console.log(loadingMessage);
+    }  
+    
+}
+
+printLoadingBar(60);
 
