@@ -185,3 +185,44 @@ printPersonNameAndAddress(['Bob:Huxley Rd',
     }
 
     catInfoAndMeowing(['Mellow 2', 'Tom 5']);
+
+    //9
+    console.log('-9-');
+
+    function printSong(input){
+        class Song{
+            constructor(typeList, name, time){
+                this.typeList = typeList;
+                this.name = name;
+                this.time = time;
+            }
+
+            printName(){
+                 console.log(this.name);
+            }
+        }
+
+        const songsCount = input.shift();
+        const typeListFilter = input.pop();
+        const allTypeList = 'all';
+
+        if(typeListFilter === allTypeList){
+            input.map(song => song.split('_'))
+            .map(song => new Song(song[0], song[1], song[2]))
+            .forEach(song => song.printName());
+            
+        }
+        else{
+            input.map(song => song.split('_'))
+            .map(song => new Song(song[0], song[1], song[2]))
+            .forEach(song => song.typeList === typeListFilter ? song.printName(): null);
+        }      
+    }
+
+    printSong([4,
+        'favourite_DownTown_3:14',
+        'listenLater_Andalouse_3:24',
+        'favourite_In To The Night_3:58',
+        'favourite_Live It Up_3:48',
+        'listenLater']
+        );
