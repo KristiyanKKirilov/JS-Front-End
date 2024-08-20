@@ -160,3 +160,28 @@ printPersonNameAndAddress(['Bob:Huxley Rd',
 
     //8
     console.log('-8-');
+
+    function catInfoAndMeowing(catInfo){
+        class Cat{
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            meow(){
+                console.log(`${this.name}, age ${this.age} says Meow`);
+            }
+        }
+
+        // for (const nameAge of catInfo) {
+        //     const [name,age] = nameAge.split(" ");
+        //     const cat = new Cat(name, age);
+        //     cat.meow();
+        // }
+        catInfo
+            .map(entry => entry.split(" "))
+            .map(([name, age]) => new Cat(name,age))
+            .forEach(cat => cat.meow());
+    }
+
+    catInfoAndMeowing(['Mellow 2', 'Tom 5']);
