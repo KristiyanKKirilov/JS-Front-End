@@ -87,3 +87,33 @@ function setPhoneNumberToPerson(phoneBookAsString){
 }
 
 setPhoneNumberToPerson(['Tim 0834212554', 'Peter 0877547887','Bill 0896543112','Tim 0876566344']);
+
+//6
+console.log('-6-');
+
+function scheduleMeetings(info){
+    let meetings = {};
+   
+    for (const weekdayPersonAsString of info) {
+        const weekdayPerson = weekdayPersonAsString.split(" ");
+        const weekday = weekdayPerson[0];
+        const person = weekdayPerson[1];
+        const confictMessage = `Conflict on ${weekday}!`;
+        const scheduledMessage = `Scheduled for ${weekday}`;
+        if(meetings[weekday]){
+            console.log(confictMessage);
+        }
+        else{
+            meetings[weekday] = person;
+            console.log(scheduledMessage);
+        }
+       
+    }
+
+    const entries = Object.entries(meetings);
+    for (const entry of entries) {
+        console.log(`${entry[0]} -> ${entry[1]}`);
+    }
+}
+
+scheduleMeetings(['Monday Peter', 'Wednesday Bill','Monday Tim', 'Friday Tim']);
