@@ -74,19 +74,31 @@ console.log('-5-');
 function setPhoneNumberToPerson(phoneBookAsString){
    let phoneBook = {};
    for (const namePhoneAsString of phoneBookAsString) {
-        let namePhone = namePhoneAsString.split(" ");
-        const name = namePhone[0];
-        const phoneNumber = namePhone[1];
+        let [name, phoneNumber] = namePhoneAsString.split(" ");        
         phoneBook[name] = phoneNumber;
    }
 
-   const entries = Object.entries(phoneBook);
-   for (const entry of entries) {
-        console.log(`${entry[0]} -> ${entry[1]}`);
+  
+   for (const key in phoneBook) {
+        console.log(`${key} -> ${phoneBook[key]}`);
    }
 }
-
 setPhoneNumberToPerson(['Tim 0834212554', 'Peter 0877547887','Bill 0896543112','Tim 0876566344']);
+
+//5 - second (better) alternative
+console.log('-5-2')
+function setPhoneNumberToPerson2(input){
+    let result = input.map(entry => entry.split(" "))
+    .reduce((phoneBook, [name, phone]) => {
+        phoneBook[name] = phone;
+        return phoneBook;
+    }, {})
+
+    for (const key in result) {
+        console.log(`${key} -> ${result[key]}`);
+    }
+}
+setPhoneNumberToPerson2(['Tim 0834212554', 'Peter 0877547887','Bill 0896543112','Tim 0876566344']);
 
 //6
 console.log('-6-');
@@ -100,7 +112,7 @@ function scheduleMeetings(info){
         const person = weekdayPerson[1];
         const confictMessage = `Conflict on ${weekday}!`;
         const scheduledMessage = `Scheduled for ${weekday}`;
-        if(meetings[weekday]){
+        if(meetings.hasOwnProperty(weekday)){
             console.log(confictMessage);
         }
         else{
@@ -109,9 +121,8 @@ function scheduleMeetings(info){
         }       
     }
 
-    const entries = Object.entries(meetings);
-    for (const entry of entries) {
-        console.log(`${entry[0]} -> ${entry[1]}`);
+    for (const key in meetings) {
+        console.log(`${key} -> ${meetings[key]}`);
     }
 }
 
@@ -124,9 +135,7 @@ console.log('-7-');
 function printPersonNameAndAddress(info){
     let addressBook = {};
     for (const personAddressAsString of info) {
-        const personAddress = personAddressAsString.split(":");
-        const person = personAddress[0];
-        const address = personAddress[1];
+        const [person, address] = personAddressAsString.split(":");        
         addressBook[person] = address;
     }
 
@@ -134,7 +143,7 @@ function printPersonNameAndAddress(info){
     for (const key of keys) {
         console.log(`${key} -> ${addressBook[key]}`);
     }
-}
+} 
 
 printPersonNameAndAddress(['Bob:Huxley Rd',
     'John:Milwaukee Crossing',
@@ -148,3 +157,6 @@ printPersonNameAndAddress(['Bob:Huxley Rd',
     'Jeff:Gateway Way',
     'Jeff:Huxley Rd']
     );
+
+    //8
+    console.log('-8-');
