@@ -46,6 +46,10 @@ const toObjectFromEntries = Object.fromEntries(entries);
 console.log(toObjectFromEntries);
 
 //object destructing
-let {name, age, isMale} = person;
+let { age, isMale} = person;
 console.log(isMale);
 console.log(age);
+
+//object destruction but renaming properties
+let {name: firstName} = person;
+console.log(firstName);
