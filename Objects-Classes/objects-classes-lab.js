@@ -22,6 +22,12 @@ function printKeyValuePair(object){
         console.log(`${keyValuePair[0]} -> ${keyValuePair[1]}`);     
     }
 
+    //2
+    console.log('-2-');
+    let keys = Object.keys(object);
+    for (const key of keys) {
+        console.log(`${key} -> ${object[key]}`)
+    }
     
 }
 
