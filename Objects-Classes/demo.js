@@ -51,5 +51,6 @@ console.log(isMale);
 console.log(age);
 
 //object destruction but renaming properties
-let {name: firstName} = person;
+let {name: firstName, ...rest} = person;
 console.log(firstName);
+console.log(rest);
