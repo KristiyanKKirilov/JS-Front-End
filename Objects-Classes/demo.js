@@ -38,4 +38,14 @@ console.log(Object.keys(person));
 console.log(Object.values(person));
 
 //Object entries
-console.log(Object.entries(person));
+const entries = Object.entries(person);
+console.log(entries);
+
+//from entries to object
+const toObjectFromEntries = Object.fromEntries(entries);
+console.log(toObjectFromEntries);
+
+//object destructing
+let {name, age, isMale} = person;
+console.log(isMale);
+console.log(age);
