@@ -23,6 +23,9 @@ let robot = {
         console.log('Robot cleaning...');
     },
     cook: () => console.log('Cooking dinner...'), //Arrow function syntax
+    wash(){ //Object methid notation
+        console.log('Washing the floor...');
+    }, 
     
 };
 
