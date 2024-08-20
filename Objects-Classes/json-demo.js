@@ -7,3 +7,7 @@ let car = {
 //convert object to JSON (serializing)
 let carJSON = JSON.stringify(car);
 console.log(carJSON);
+
+//convert json to object (deserializing)
+let carObject = JSON.parse(carJSON);
+console.log(carObject.brand);
