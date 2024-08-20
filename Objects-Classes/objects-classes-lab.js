@@ -67,3 +67,23 @@ function serializeObject(name, lastName, hairColor){
 }
 
 serializeObject('George', 'Jones', 'Brown');
+
+//5
+console.log('-5-');
+
+function setPhoneNumberToPerson(phoneBookAsString){
+   let phoneBook = {};
+   for (const namePhoneAsString of phoneBookAsString) {
+        let namePhone = namePhoneAsString.split(" ");
+        const name = namePhone[0];
+        const phoneNumber = namePhone[1];
+        phoneBook[name] = phoneNumber;
+   }
+
+   const entries = Object.entries(phoneBook);
+   for (const entry of entries) {
+        console.log(`${entry[0]} -> ${entry[1]}`);
+   }
+}
+
+setPhoneNumberToPerson(['Tim 0834212554', 'Peter 0877547887','Bill 0896543112','Tim 0876566344']);
