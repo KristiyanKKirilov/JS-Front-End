@@ -52,3 +52,18 @@ function deserializeJSON(json){
 }
 
 deserializeJSON('{"name": "George", "age": 40, "town": "Sofia"}');
+
+//4
+console.log('-4-');
+
+function serializeObject(name, lastName, hairColor){
+    const person = {
+        name, 
+        lastName,
+        hairColor
+    };
+    const json = JSON.stringify(person);
+    console.log(json);
+}
+
+serializeObject('George', 'Jones', 'Brown');
