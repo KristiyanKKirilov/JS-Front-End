@@ -39,3 +39,16 @@ printKeyValuePair({
     postCode: "1000"
 }
 );
+
+//3
+console.log('-3-');
+
+function deserializeJSON(json){
+    const obj = JSON.parse(json);
+    const entries = Object.entries(obj);
+    for (const entry of entries) {
+        console.log(`${entry[0]}: ${entry[1]}`);
+    }
+}
+
+deserializeJSON('{"name": "George", "age": 40, "town": "Sofia"}');
