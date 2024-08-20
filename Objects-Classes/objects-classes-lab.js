@@ -106,8 +106,7 @@ function scheduleMeetings(info){
         else{
             meetings[weekday] = person;
             console.log(scheduledMessage);
-        }
-       
+        }       
     }
 
     const entries = Object.entries(meetings);
@@ -117,3 +116,35 @@ function scheduleMeetings(info){
 }
 
 scheduleMeetings(['Monday Peter', 'Wednesday Bill','Monday Tim', 'Friday Tim']);
+
+
+//7
+console.log('-7-');
+
+function printPersonNameAndAddress(info){
+    let addressBook = {};
+    for (const personAddressAsString of info) {
+        const personAddress = personAddressAsString.split(":");
+        const person = personAddress[0];
+        const address = personAddress[1];
+        addressBook[person] = address;
+    }
+
+    const keys = Object.keys(addressBook).sort((a,b) => a.localeCompare(b));
+    for (const key of keys) {
+        console.log(`${key} -> ${addressBook[key]}`);
+    }
+}
+
+printPersonNameAndAddress(['Bob:Huxley Rd',
+    'John:Milwaukee Crossing',
+    'Peter:Fordem Ave',
+    'Bob:Redwing Ave',
+    'George:Mesta Crossing',
+    'Ted:Gateway Way',
+    'Bill:Gateway Way',
+    'John:Grover Rd',
+    'Peter:Huxley Rd',
+    'Jeff:Gateway Way',
+    'Jeff:Huxley Rd']
+    );
