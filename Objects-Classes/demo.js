@@ -32,3 +32,10 @@ let robot = {
 console.log(robot);
 robot.clean();
 robot.cook();
+
+//Object values
+console.log(Object.keys(person));
+console.log(Object.values(person));
+
+//Object entries
+console.log(Object.entries(person));
