@@ -33,4 +33,11 @@ console.log(liveNodeListMovies);
 const liveNodeList = movieListElements.childNodes;//live nodelist
 console.log(liveNodeList);
 
+//convert html collection or nodelist to array
+const allMovieElementsArray = Array.from(movieListElements);
+console.log(allMovieElementsArray);
+
+//spread operator
+const allMovieElementsAsArray2 = [...movieListElements];
+console.log(allMovieElementsAsArray2); 
 
