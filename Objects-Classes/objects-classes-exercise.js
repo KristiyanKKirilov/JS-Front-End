@@ -263,3 +263,35 @@ function printOddMetElements(input){
     );
 }
     printOddMetElements('Java C# Php PHP Java PhP 3 C# 3 1 5 C#');
+
+//10
+console.log('-10-');
+
+class Vechicle{
+    constructor(type, model, parts, fuel){
+        this.type = type;
+        this.model = model;
+        this.parts = {
+            ...parts,
+            quality: parts.engine * parts.power
+        };
+        this.fuel = fuel;
+    }
+
+    drive(fuelConsumption){
+        this.fuel -= fuelConsumption;
+        if(this.fuel < 0){
+            this.fuel = 0;
+        }        
+    }
+
+   
+}
+
+ let parts = {engine: 6, power: 100};
+    let vehicle = new Vechicle('a', 'b', parts, 200);    
+    vehicle.drive(100);
+    console.log(vehicle.fuel);
+    console.log(vehicle.parts.quality);
+
+
