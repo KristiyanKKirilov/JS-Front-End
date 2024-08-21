@@ -10,5 +10,8 @@ function add()
     newMovieElement.textContent = 'The Godfather';
 
     //Append element
-    movieListElement.appendChild(newMovieElement);
+    movieListElement.appendChild(newMovieElement); //add to the end of the collection (as last child)
+    movieListElement.append(newMovieElement); //add to the end of the collection (as last child)
+    movieListElement.prepend(newMovieElement); //add to the beginning of the collection (as first child)
 }
+
