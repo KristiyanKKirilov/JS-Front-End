@@ -1,8 +1,7 @@
 function colorize() {
-   const rows = document.getElementsByTagName('tr');
-   for (let i = 0; i < rows.length; i++) {
-        if(i % 2 !== 0){
-            rows[i].style.backgroundColor = 'Teal';
-        }    
-   }
+    let evenRows = document.querySelectorAll('table tr:nth-child(2), table tr:nth-child(4)');
+    console.log(evenRows);
+    for (const evenRow of evenRows) {
+        evenRow.style.backgroundColor = 'Teal';
+    }
 }
