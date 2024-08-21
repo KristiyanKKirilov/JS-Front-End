@@ -135,3 +135,41 @@ printMoviesInfo([
     'Fast and Furious onDate 30.07.2018',
     'Batman onDate 01.08.2018',
     'Fast and Furious directedBy Rob Cohen']);
+
+
+//5
+console.log('-5-');
+
+function heroRegister(herosInfo){
+    let heros = [];
+    const hero = 'Hero';
+    const level = 'level';
+    const items = 'items';
+    for (const currentHeroInfo of herosInfo) {
+        const heroInfo = currentHeroInfo.split('/').map(hero => hero.trim());
+        const [heroName, heroLevel, ...heroItems] = heroInfo;
+        const heroItemsAsString = heroItems.join(', ');
+        heros.push({
+                [hero]: heroName,
+                [level]: Number.parseInt(heroLevel),
+                [items]: heroItemsAsString
+            });
+    }
+
+    for (const currentHero of heros.sort((heroA, heroB) => heroA.level - heroB.level)) {
+        for (const key in currentHero) {
+            if(key === hero){
+                console.log(`${key}: ${currentHero[key]}`)
+            }
+            else{
+                console.log(`${key} => ${currentHero[key]}`)
+            }
+           
+        }
+    }
+}
+
+heroRegister([
+    'Isacc / 25 / Apple, GravityGun',
+    'Derek / 12 / BarrelVest, DestructionSword',
+    'Hes / 1 / Desolator, Sentinel, Antara']);
