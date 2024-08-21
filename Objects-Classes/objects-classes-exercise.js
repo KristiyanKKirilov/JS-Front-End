@@ -219,3 +219,47 @@ wordsTracker([
     'is the', 
     'first', 'sentence', 'Here', 'is', 'another', 'the', 'And', 'finally', 'the', 'the', 'sentence']
     );
+
+//7
+console.log('-7-');
+
+function printOddMetElements(input){
+    let result = [];
+    const allElements = input.split(' ').map(el => el.toLowerCase());
+    let uniqueElements = allElements.filter((value, index, self) => {
+        return self.indexOf(value) === index});
+
+    for (const element of uniqueElements) {
+        let times = allElements.filter(w => w == element).length;
+        if(times % 2 !== 0){
+            result.push(element);
+        }
+    }
+
+    console.log(result.join(' '));
+}
+
+printOddMetElements('Java C# Php PHP Java PhP 3 C# 3 1 5 C#');
+
+//7 - second solution
+console.log('-7-2');
+
+function printOddMetElements(input){
+    const occurences = input.split(' ').reduce((acc, curr) => {
+        const key = curr.toLowerCase();
+        if(!acc.hasOwnProperty(key)){
+            acc[key] = 0;
+        }
+
+        acc[key]++;
+
+        return acc;
+    }, {});
+
+    console.log(
+        Object.keys(occurences)
+        .filter((key) => occurences[key] % 2 !== 0)
+        .join(' ')
+    );
+}
+    printOddMetElements('Java C# Php PHP Java PhP 3 C# 3 1 5 C#');
