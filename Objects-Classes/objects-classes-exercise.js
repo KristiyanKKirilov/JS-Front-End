@@ -197,3 +197,25 @@ heroRegister2([
     'Isacc / 25 / Apple, GravityGun',
     'Derek / 12 / BarrelVest, DestructionSword',
     'Hes / 1 / Desolator, Sentinel, Antara']);
+
+//6
+console.log('-6-');
+
+function wordsTracker(input){
+    const wordsToSearch = input.shift().split(' ');
+    let result = {};
+    for (const word of wordsToSearch) {
+        let times = input.filter(w => w == word).length;
+        result[word] = times;
+    }
+
+    let entries = Object.entries(result);
+    for (const [key, value] of entries.sort((a, b) => b[1] - a[1])) {
+        console.log(`${key} - ${value}`);
+    }
+}
+
+wordsTracker([
+    'is the', 
+    'first', 'sentence', 'Here', 'is', 'another', 'the', 'And', 'finally', 'the', 'the', 'sentence']
+    );
