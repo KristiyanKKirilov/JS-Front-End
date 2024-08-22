@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event propagation</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .orange{
+            background-color: orange;
+            width: 50vw;
+            height: 50vh;display: flex
+            ;justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .green{
+            background-color: green;
+            width: 50%;
+            height: 50%;display: flex
+            ;justify-content: center;
+            align-items: center;
+        }
+
+        .yellow{
+            background-color: yellow;
+            width: 50%;
+            height: 50%;display: flex
+            ;justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event propagation</h1>
+
+    <div class="box orange">
+        <div class="box green">
+            <div class="box yellow">He-he</div>
+        </div>
+    </div>
+
+    <form action="#">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <input type="submit" value="Login" id="form-submit">
+    </form>
+    <script>
+        document.querySelectorAll('.box')
+        .forEach(el => el.addEventListener('click', (e) =>{
+            e.stopPropagation();
+            console.log(`${e.currentTarget.getAttribute('class')} - Clicked`);            
+        }, {capture: false}))
+
+        //Stop default submit button behavior
+        const submitElement = document.getElementById('form-submit');
+        submitElement.addEventListener('click', (e) =>{
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
