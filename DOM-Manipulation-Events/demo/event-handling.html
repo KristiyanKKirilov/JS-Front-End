@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-Handling</title>
+</head>
+<body>
+    <h1>Event handling</h1>
+    <ol>
+        <li>
+            <span>Add event handler with htmml attribute</span>
+            <button onclick="htmlAttributeEventHandler()">Click me</button>
+        </li>
+        <li>
+            <span>Add event handler using DOM element properties</span>
+            <button id="second-button">Click me</button>
+        </li>
+        <li>
+            <span>Add event using DOM event handler</span>
+            <button id="third-button">Click me</button>
+        </li>
+    </ol>
+
+    <script>
+        function htmlAttributeEventHandler(){
+            console.log('Add event handler with htmml attribute');
+        }
+
+        const secondButton = document.getElementById('second-button');
+        secondButton.onclick = function(){
+            console.log('Add event handler using DOM element properties');
+        }
+
+        const thirdButton = document.getElementById('third-button');
+        thirdButton.addEventListener('click', () => {
+            console.log('Add event using DOM event handler');
+        });
+    </script>
+</body>
+</html>
