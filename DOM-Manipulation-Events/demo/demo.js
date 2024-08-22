@@ -22,5 +22,13 @@ function add()
     console.log(firstMovieElementClone.textContent);
     movieListElement.append(firstMovieElementClone);
 
+    //----------------
+    //Removing element
+}
+
+function remove(){
+    const movieListElement = document.querySelector('ul.movie-list');
+    const firstMovieElement = movieListElement.querySelector('li:first-child');
+    firstMovieElement.remove();
 }
 
