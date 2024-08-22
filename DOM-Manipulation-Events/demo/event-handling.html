@@ -36,6 +36,14 @@
         thirdButton.addEventListener('click', () => {
             console.log('Add event using DOM event handler');
         });
+
+        function secondEventHandler(){
+            console.log('Second event handler');
+        }
+
+        thirdButton.addEventListener('click', secondEventHandler);
+
+        thirdButton.removeEventListener('click', secondEventHandler);
     </script>
 </body>
 </html>
