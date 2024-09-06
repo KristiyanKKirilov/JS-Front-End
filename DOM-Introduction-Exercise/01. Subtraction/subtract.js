@@ -1,6 +1,5 @@
 function subtract() {
-    const firstNum = document.getElementById('firstNumber').value;
-    const secondNum = document.getElementById('secondNumber').value;
+    const [firstNumber, secondNumber] = document.querySelectorAll('input[type="text"]');
     const result = document.getElementById('result');
-    result.innerText = firstNum - secondNum;
+    result.innerText = firstNumber.value - secondNumber.value;
 }
