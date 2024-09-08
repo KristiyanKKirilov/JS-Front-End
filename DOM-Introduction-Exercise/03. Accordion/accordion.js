@@ -1,13 +1,14 @@
 function toggle() {
     const buttonEl = document.querySelector('.head span.button');
     const extraEl = document.querySelector('#extra');
-    const isHidden = extraEl.style.display === 'none';
-    
-    if(isHidden || !extraEl.style.display){
+    const { display } = extraEl.style;
+    const isHidden = display === 'none';
+
+    if (isHidden || !extraEl.style.display) {
         extraEl.style.display = 'block';
-        buttonEl.textContent = 'Less';  
+        buttonEl.textContent = 'Less';
     }
-    else{
+    else {
         extraEl.style.display = 'none';
         buttonEl.textContent = 'More';
     }
