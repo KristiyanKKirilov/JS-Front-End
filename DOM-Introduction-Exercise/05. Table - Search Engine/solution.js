@@ -3,7 +3,7 @@ function solve() {
 
    function onClick() {
       const rowEls = document.querySelectorAll('table.container tbody tr');
-      const input = document.querySelector('#searchField').value;
+      const input = document.querySelector('#searchField');
 
       function getMatchElements(input){
          return [...rowEls].filter((row) => row.textContent.toLowerCase().includes(input.toLowerCase()));
@@ -16,9 +16,9 @@ function solve() {
       }
 
       clearPreviousMatches();
-      const matches = getMatchElements(input);
+      const matches = getMatchElements(input.value);
 
       matches.forEach(match => match.classList.add('select'));
-
+      input.value = '';
    }
 }
