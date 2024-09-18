@@ -34,7 +34,7 @@ function solve() {
       const [bestRestaurant] = Object.keys(restaurants).sort(
          (a,b) => getAvgSalary(restaurants[b]) - getAvgSalary(restaurants[a]));
       
-      const bestWorkers = restaurants[bestRestaurant].workers.slice().sort((a, b) => b - a);
+      const bestWorkers = restaurants[bestRestaurant].workers.slice().sort((a, b) => b.salary - a.salary);
       bestRestaurantsEl.textContent =`Name: ${bestRestaurant} Average Salary: ${getAvgSalary(restaurants[bestRestaurant]).toFixed(2)} Best Salary: ${bestWorkers[0].salary.toFixed(2)}`
 
       workersEl.textContent = bestWorkers.map((x) => `Name: ${x.name} With Salary: ${x.salary}`).join(' ');
