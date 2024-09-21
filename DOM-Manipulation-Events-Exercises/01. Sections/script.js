@@ -1,3 +1,6 @@
 function create(words) {
-   console.log('TODO:...');
+   const divContentEl = document.getElementById('content');
+   words.forEach((word) => {
+      const pEl = document.createElement('p');
+   });
 }
