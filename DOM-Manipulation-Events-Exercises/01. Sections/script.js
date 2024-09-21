@@ -15,10 +15,10 @@ function create(words) {
    words.forEach((word) => {
       const divEl = createWordStructute(word);
 
-      divEl.addEventListener('click', () => {
-         divEl.children[0].style.display = 'block';
+      divEl.addEventListener('click', (event) => {
+         // divEl.children[0].style.display = 'block';
          //event.target.children[0].style.display = 'block';
-         //event.target.querySelector('p').style.display = 'block';
+         event.target.querySelector('p').style.display = 'block';
       });
       divContentEl.appendChild(divEl);      
    });
