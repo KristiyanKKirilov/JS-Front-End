@@ -8,6 +8,10 @@ function attachEventsListeners() {
     const minutesToHours = (minutes) => minutes / 60;
     const minutesToDays = (minutes) => minutesToHours(minutes) / 24;
 
+    const hoursToDays = (hours) => hours / 24;
+    const hoursToMinutes = (hours) => hours * 60;
+    const hoursToSeconds = (hours) => hoursToMinutes(60) * 60;
+
     function onClickHandler(event){
         const rawId = event.target.getAttribute('id');
         const inputId = rawId.replace('Btn', '');
@@ -26,6 +30,13 @@ function attachEventsListeners() {
                 document.getElementById('hours').value = minutesToHours(inputEl.value);
                 document.getElementById('seconds').value = minutesToSeconds (inputEl.value);
             }
+            break;
+            case 'hours':
+                {
+                    document.getElementById('days').value = hoursToDays(inputEl.value);
+                    document.getElementById('minutes').value = hoursToMinutes(inputEl.value);
+                    document.getElementById('seconds').value = hoursToSeconds(inputEl.value);
+                }
             break;
         }
     }
