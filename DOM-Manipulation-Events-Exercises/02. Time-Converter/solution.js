@@ -10,7 +10,7 @@ function attachEventsListeners() {
 
     const hoursToDays = (hours) => hours / 24;
     const hoursToMinutes = (hours) => hours * 60;
-    const hoursToSeconds = (hours) => hoursToMinutes(60) * 60;
+    const hoursToSeconds = (hours) => hoursToMinutes(hours) * 60;
 
     const daysToHours = (days) => days * 24;
     const daysToMinutes = (days) => daysToHours(days) * 60;
