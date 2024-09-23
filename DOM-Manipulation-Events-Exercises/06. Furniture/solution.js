@@ -5,7 +5,7 @@ function solve() {
   const tbodyEl = document.querySelector('tbody');
   const firstTrEl = tbodyEl.querySelector('tr');
 
-  function appendTrForEachData({img, name, price, decFactor}) {
+  function appendTrForEachData({ img, name, price, decFactor }) {
     const currentTrClone = firstTrEl.cloneNode(true);
     //changing the image 
     currentTrClone.children[0].children[0].setAttribute('src', img);
@@ -16,16 +16,28 @@ function solve() {
     //changing the decFactor
     currentTrClone.children[3].children[0].textContent = decFactor;
     //changing the checkbox availability
-    currentTrClone.children[4].children[0].disabled = false;
+    const checkboxEl = currentTrClone.children[4].children[0];
+    checkboxEl.disabled = false;
+    checkboxEl.setAttribute('name', name);
+    checkboxEl.setAttribute('price', price);
+    checkboxEl.setAttribute('decFactor', decFactor);
+
     tbodyEl.appendChild(currentTrClone);
   }
 
-  function onGenerateBtnClickHandler(){
+  function onGenerateBtnClickHandler() {
     const inputData = JSON.parse(inputTextarea.value);
     console.log(inputData);
 
     inputData.forEach(appendTrForEachData);
   }
 
+  function onBuyBtnClickHandler() {
+    const allCheckedInputEl = [...document.querySelectorAll('input[type="checkbox"]')]
+    .filter((inputEl) => inputEl.checked);
+    console.log(allCheckedInputEl);
+  }
+
   generateBtn.addEventListener('click', onGenerateBtnClickHandler);
+  buyBtn.addEventListener('click', onBuyBtnClickHandler);
 }
