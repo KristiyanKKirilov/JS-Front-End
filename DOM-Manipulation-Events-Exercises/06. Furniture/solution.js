@@ -33,9 +33,19 @@ function solve() {
   }
 
   function onBuyBtnClickHandler() {
-    const allCheckedInputEl = [...document.querySelectorAll('input[type="checkbox"]')]
-    .filter((inputEl) => inputEl.checked);
-    console.log(allCheckedInputEl);
+    const outputData = [...document.querySelectorAll('input[type="checkbox"]')]
+    .filter((inputEl) => inputEl.checked).reduce((acc, currInputEl) => {
+      const name = currInputEl.getAttribute('name');
+      const price = currInputEl.getAttribute('price');
+      const decFactor = currInputEl.getAttribute('decFactor');
+
+      acc.names.push(name);
+      acc.totalPrice += Number(price);
+      acc.totalDecFactor += Number(decFactor); 
+      return acc;
+    }, {names: [], totalPrice: 0, totalDecFactor: 0});
+
+    outputTextarea.value = `Bought furniture: ${outputData.names.join(', ')}\nTotal price: ${outputData.totalPrice.toFixed(2)}\nAverage decoration factor: ${outputData.totalDecFactor / outputData.names.length}`
   }
 
   generateBtn.addEventListener('click', onGenerateBtnClickHandler);
