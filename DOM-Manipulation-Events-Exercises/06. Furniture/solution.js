@@ -18,7 +18,8 @@ function solve() {
       currentTrClone.children[2].children[0].textContent = price;
       //changing the decFactor
       currentTrClone.children[3].children[0].textContent = decFactor;
-
+      //changing the checkbox availability
+      currentTrClone.children[4].children[0].disabled = false;
       tbodyEl.appendChild(currentTrClone);
     })
   }
