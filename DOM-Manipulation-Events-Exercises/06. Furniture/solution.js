@@ -9,7 +9,8 @@ function solve() {
       const currentTrClone = firstTrEl.cloneNode(true);
 
       //changing the image 
-      currentTrClone.children[0].setAttribute('src', img);
+      currentTrClone.children[0].children[0].setAttribute('src', img);
+      //changing the name
     
     })
   }
