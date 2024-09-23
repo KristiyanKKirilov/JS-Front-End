@@ -2,7 +2,8 @@ function solve() {
   const [generateBtn, buyBtn] = document.querySelectorAll('button');
   const [inputTextarea, outputTextarea] = document.querySelectorAll('textarea');
 
-  const firstTrEl = document.querySelector('tbody > tr');
+  const tbodyEl = document.querySelector('tbody');
+  const firstTrEl = tbodyEl.querySelector('tr');
   function onGenerateBtnClickHandler(){
     const inputData = JSON.parse(inputTextarea.value);
     console.log(inputData);
@@ -18,7 +19,7 @@ function solve() {
       //changing the decFactor
       currentTrClone.children[3].children[0].textContent = decFactor;
 
-    
+      tbodyEl.appendChild(currentTrClone);
     })
   }
 
