@@ -23,8 +23,7 @@ function encodeAndDecodeMessages() {
     function decodeMessageHandler(){
         let decodeTextAreaValue = decodeTextAreaEl.value;
         const result = decodeTextAreaValue.split('').map(ch => turnIntoPreviousChar(ch)).join('');
-        encodeTextAreaEl.value = result;
-        decodeTextAreaEl.value = '';
+        decodeTextAreaEl.value = result;
     }
 
     encodeBtnEl.addEventListener('click', encodeMessageHandler);
