@@ -53,3 +53,5 @@ Promise.allSettled([
     console.log(err); 
 });
 
+
+//Promise race - returns the fastet promise
