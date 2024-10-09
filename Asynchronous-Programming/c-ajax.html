@@ -26,6 +26,13 @@
             .catch((reject) => {
                 console.log(reject);
             });  
+
+            //refactoring the code
+            fetch(baseUrl)
+                .then((response) => response.json())//promise chaining
+                .then(result => console.log(result))
+                .catch(reject => console.log(reject));
+
     }
 </script>
 </html>
