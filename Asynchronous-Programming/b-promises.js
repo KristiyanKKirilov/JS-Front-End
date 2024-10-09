@@ -1,5 +1,23 @@
 const marriagePromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve('Just married!');
+        if(Math.random() < 0.5){
+          resolve('Just married!');
+        } 
+        else{
+            reject('Not married!');
+        } 
+            
     }, 1000);
 });
+
+//Pending state
+console.log(marriagePromise);
+
+//Consume promise
+marriagePromise
+    .then((result) => {
+        console.log(result); //fulfilled state
+    })
+    .catch((reason) => {
+        console.log(reason);
+    })
