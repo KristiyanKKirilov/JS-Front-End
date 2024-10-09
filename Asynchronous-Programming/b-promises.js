@@ -39,4 +39,17 @@ Promise.all([
     console.log(err); 
 });
 
+//allSettled promise - fulfilled and rejected promises
+Promise.allSettled([
+    marriagePromise,
+    Promise.resolve('Some resolved promise'),
+    'Pesho', 
+    Promise.reject('Failed promise'),//one failed promise, all promises fail
+    20,
+]).then((result) => {
+    console.log(result);
+    })
+.catch(err => {
+    console.log(err); 
+});
 
