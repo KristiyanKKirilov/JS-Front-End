@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <h1>Fetch API</h1>
+    <button id="load-button">Load</button>
+</body>
+
+<script>
+    const baseUrl = 'https://api.restful-api.dev/objects';
+    const loadButton = document.getElementById('load-button');
+    loadButton.addEventListener('click', fetchObjects);
+
+    function fetchObjects(){
+        const responsePromise = fetch(baseUrl)
+            .then((response) => {
+                response.json()
+                    .then((data => {
+                        console.log(data); 
+                    }))
+            })
+            .catch((reject) => {
+                console.log(reject);
+            });  
+    }
+</script>
+</html>
