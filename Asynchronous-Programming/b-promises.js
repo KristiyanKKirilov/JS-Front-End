@@ -19,5 +19,10 @@ marriagePromise
         console.log(result); //fulfilled state
     })
     .catch((reason) => {
-        console.log(reason);
+        console.log(reason); //failed state 
     })
+    .finally(() => {
+        console.log('The promise ended');
+    });
+    
+    
