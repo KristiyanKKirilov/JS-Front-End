@@ -25,4 +25,18 @@ marriagePromise
         console.log('The promise ended');
     });
     
-    
+//Promsise all 
+Promise.all([
+    marriagePromise,
+    Promise.resolve('Some resolved promise'),
+    'Pesho', 
+    Promise.reject('Failed promise'),//one failed promise, all promises fail
+    20,
+]).then((result) => {
+    console.log(result);
+    })
+.catch(err => {
+    console.log(err); 
+});
+
+
