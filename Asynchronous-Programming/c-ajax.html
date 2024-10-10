@@ -34,7 +34,13 @@
 
             //refactoring the code
             fetch(baseUrl)
-                .then((response) => response.json())//promise chaining
+                .then((response) => {
+                    if(!response.ok){
+                        throw Error('Something went wrong');
+                    }
+                    
+                    return response.json();
+                })//promise chaining
                 .then(result => {
                     ulElement.append(...result.map(obj => {
                         const liElement = document.createElement('li');
