@@ -8,29 +8,40 @@
 <body>
     <h1>Fetch API</h1>
     <button id="load-button">Load</button>
+    <ul class="object-list">
+
+    </ul>
 </body>
 
 <script>
     const baseUrl = 'https://api.restful-api.dev/objects';
     const loadButton = document.getElementById('load-button');
+    const ulElement = document.querySelector('.object-list');
     loadButton.addEventListener('click', fetchObjects);
 
     function fetchObjects(){
-        const responsePromise = fetch(baseUrl)
-            .then((response) => {
-                response.json()
-                    .then((data => {
-                        console.log(data); 
-                    }))
-            })
-            .catch((reject) => {
-                console.log(reject);
-            });  
+        //Not a good example of how to  fetch a request
+        // const responsePromise = fetch(baseUrl)
+        //     .then((response) => {
+        //         response.json()
+        //             .then((data => {
+        //                 console.log(data); 
+        //             }))
+        //     })
+        //     .catch((reject) => {
+        //         console.log(reject);
+        //     });  
 
             //refactoring the code
             fetch(baseUrl)
                 .then((response) => response.json())//promise chaining
-                .then(result => console.log(result))
+                .then(result => {
+                    ulElement.append(...result.map(obj => {
+                        const liElement = document.createElement('li');
+                        liElement.textContent = object.name;
+                        return liElement; 
+                    }))
+                })
                 .catch(reject => console.log(reject));
 
     }
