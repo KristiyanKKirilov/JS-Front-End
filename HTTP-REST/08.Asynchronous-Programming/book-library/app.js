@@ -18,9 +18,6 @@ loadBtn.addEventListener ('click', () => {
         })
         .catch(reject => console.log(reject));
         
-    //Create tr element for each book
-
-    //Append each tr element to the table
 });
 
 
@@ -30,10 +27,19 @@ function createTrBookEl(object){
     const authorTdEl = document.createElement('td');
     authorTdEl.textContent = object.author;
     
+    const editBtnEl = document.createElement('button');
+    editBtnEl.textContent = 'Edit';
+    const deleteBtnEl = document.createElement('button');
+    deleteBtnEl.textContent = 'Delete';
+
+    const buttonsTdEl = document.createElement('td');
+    buttonsTdEl.append(editBtnEl, deleteBtnEl);
+
     const trEl = document.createElement('tr');
 
     trEl.appendChild(nameTdEl);
     trEl.appendChild(authorTdEl);
+    trEl.appendChild(buttonsTdEl);
 
     return trEl;
 }
