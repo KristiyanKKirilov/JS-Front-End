@@ -2,24 +2,40 @@ const baseUrl = 'http://localhost:3030/jsonstore/collections/books';
 
 const loadBtn = document.getElementById('loadBooks');
 const tbodyEl = document.querySelector('table tbody');
-loadBtn.addEventListener ('click', () => {
-    //Fetch all books
-    fetch(baseUrl)
-        .then(response => {
-            if(!response.ok){
-                throw Error('Something went wrong');
-            }
+const formSubmitBtnEl = document.querySelector('#form button:last-of-type');
 
-           return response.json();
-        })
-        .then(result => {
-            const books = Object.values(result);
-            tbodyEl.append(...books.map(createTrBookEl));    
-        })
-        .catch(reject => console.log(reject));
-        
-});
+loadBtn.addEventListener ('click', fetchBooks);
 
+formSubmitBtnEl.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    // get inputs
+    const titleInputEl = document.querySelector('#form input[name="title"]');
+    const authorInputEl = document.querySelector('#form input[name="author"]');
+
+    //send data to the server api
+    fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            title: titleInputEl.value, 
+            author: authorInputEl.value
+        })
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+
+        //clear input
+        titleInputEl.value = ''; 
+        authorInputEl.value = '';
+
+        //refetch books
+        fetchBooks();
+    });
+})
 
 function createTrBookEl(object){
     const nameTdEl = document.createElement('td');
@@ -42,6 +58,22 @@ function createTrBookEl(object){
     trEl.appendChild(buttonsTdEl);
 
     return trEl;
+}
+
+function fetchBooks(){
+    fetch(baseUrl)
+        .then(response => {
+            if(!response.ok){
+                throw Error('Something went wrong');
+            }
+
+           return response.json();
+        })
+        .then(result => {
+            const books = Object.values(result);
+            tbodyEl.append(...books.map(createTrBookEl));    
+        })
+        .catch(reject => console.log(reject));
 }
 
 
