@@ -70,6 +70,9 @@ function fetchBooks(){
            return response.json();
         })
         .then(result => {
+              //clear book list
+             tbodyEl.innerHTML = '';
+
             const books = Object.values(result);
             tbodyEl.append(...books.map(createTrBookEl));    
         })
