@@ -2,28 +2,32 @@ const baseUrl = 'http://localhost:3030/jsonstore/collections/books';
 
 const loadBtn = document.getElementById('loadBooks');
 const tbodyEl = document.querySelector('table tbody');
-const formSubmitBtnEl = document.querySelector('#form button:last-of-type');
+const formEl = document.querySelector('#form');
+const formSubmitBtnEl = formEl.querySelector('button:last-of-type');
+const titleInputEl = formEl.querySelector('input[name="title"]');
+const authorInputEl = formEl.querySelector('input[name="author"]');
 
 loadBtn.addEventListener('click', fetchBooks);
 
 formSubmitBtnEl.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // get inputs
-    const titleInputEl = document.querySelector('#form input[name="title"]');
-    const authorInputEl = document.querySelector('#form input[name="author"]');
+    const bookId = formEl.getAttribute('data-edit-id');
 
+    const bookData = {
+        _id: bookId,
+        title: titleInputEl.value,
+        author: authorInputEl.value,
+    };
+    
     //send data to the server api
-    fetch(baseUrl, {
-        method: 'POST',
+    fetch(`${baseUrl}/${bookId ? bookId : ''}`, {
+        method: bookId ? 'PUT' : 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            title: titleInputEl.value,
-            author: authorInputEl.value
-        })
-    })
+        body: JSON.stringify(bookData), 
+    }) 
         .then(response => response.json())
         .then(result => {
             console.log(result);
@@ -87,23 +91,16 @@ function createTrBookEl(object) {
         } catch (error) {
             console.log(error);
         }
+    });
 
+    editBtnEl.addEventListener('click', () => {
+        titleInputEl.value = object.title;
+        authorInputEl.value = object.author;
 
+        formEl.setAttribute('data-edit-id', object._id);
 
+        trEl.remove(); 
     });
 
     return trEl;
 }
-
-
-
-
-
-/* <tr>
-<td>Book 1</td>
-<td>Author 1</td>
-<td>
-    <button>Edit</button>
-    <button>Delete</button>
-</td>
-</tr>*/
