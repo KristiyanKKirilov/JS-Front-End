@@ -11,4 +11,17 @@ const challenge = () => {
     return 6;
 };
 
-challenge();
+//challenge();
+const getNumberWithDelay = async (value = 2, delay = 5000) =>
+    new Promise((res) => {
+        setTimeout(() => res(value), delay);
+    });
+
+const promiseDemo = () => {
+    console.log(1);
+    getNumberWithDelay().then((r) => console.log(r));
+    console.log(3);
+};
+
+//promiseDemo();
+
