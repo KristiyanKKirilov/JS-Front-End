@@ -25,3 +25,12 @@ const promiseDemo = () => {
 
 //promiseDemo();
 
+const awaitDemo = async() => {
+    console.log(1);
+    const secondNumber = await getNumberWithDelay();
+    console.log(secondNumber);
+    console.log(3);
+}
+
+awaitDemo(); 
+
