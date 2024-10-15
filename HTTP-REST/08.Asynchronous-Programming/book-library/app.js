@@ -30,14 +30,15 @@ formSubmitBtnEl.addEventListener('click', (e) => {
     }) 
         .then(response => response.json())
         .then(result => {
-            console.log(result);
-
             //clear input
             titleInputEl.value = '';
             authorInputEl.value = '';
 
             //refetch books
             fetchBooks();
+        })
+        .finally(() => {
+            formEl.removeAttribute('data-edit-id');
         });
 })
 
