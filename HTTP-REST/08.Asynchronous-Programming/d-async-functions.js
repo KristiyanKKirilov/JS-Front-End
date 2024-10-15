@@ -1,16 +1,27 @@
-// Basic syntax - always returns promise
-async function asyncFunc(text) {
-    return 'Pesho';
+//basic async function
+async function logAsync(text){
+    return 'Hello';
 }
 
-asyncFunc()
-    .then(result => console.log('Promise - ' + result));
+logAsync()
+    .then(result => console.log(result));
 
-// Use await
-async function getResult() {
-    const result = await asyncFunc();
+async function getResult(){
+    const result = await logAsync();
 
-    console.log(`Async function - ${result}`);
+    console.log(result);
 }
 
-getResult();
+getResult();        
+
+async function getSwCharacters(){
+    const url = 'https://swapi.dev/api/';
+
+    const response = await fetch(url);
+    const result = await response.json();
+
+    console.log(result);
+}
+
+getSwCharacters();
+

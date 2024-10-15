@@ -4,9 +4,9 @@ const loadBtn = document.getElementById('loadBooks');
 const tbodyEl = document.querySelector('table tbody');
 const formSubmitBtnEl = document.querySelector('#form button:last-of-type');
 
-loadBtn.addEventListener ('click', fetchBooks);
+loadBtn.addEventListener('click', fetchBooks);
 
-formSubmitBtnEl.addEventListener('click', (e)=>{
+formSubmitBtnEl.addEventListener('click', (e) => {
     e.preventDefault();
 
     // get inputs
@@ -20,29 +20,48 @@ formSubmitBtnEl.addEventListener('click', (e)=>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: titleInputEl.value, 
+            title: titleInputEl.value,
             author: authorInputEl.value
         })
     })
-    .then(response => response.json())
-    .then(result => {
-        console.log(result);
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
 
-        //clear input
-        titleInputEl.value = ''; 
-        authorInputEl.value = '';
+            //clear input
+            titleInputEl.value = '';
+            authorInputEl.value = '';
 
-        //refetch books
-        fetchBooks();
-    });
+            //refetch books
+            fetchBooks();
+        });
 })
 
-function createTrBookEl(object){
+function fetchBooks() {
+    fetch(baseUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw Error('Something went wrong');
+            }
+
+            return response.json();
+        })
+        .then(result => {
+            //clear book list
+            tbodyEl.innerHTML = '';
+
+            const books = Object.values(result);
+            tbodyEl.append(...books.map(createTrBookEl));
+        })
+        .catch(reject => console.log(reject));
+}
+
+function createTrBookEl(object) {
     const nameTdEl = document.createElement('td');
     nameTdEl.textContent = object.title;
     const authorTdEl = document.createElement('td');
     authorTdEl.textContent = object.author;
-    
+
     const editBtnEl = document.createElement('button');
     editBtnEl.textContent = 'Edit';
     const deleteBtnEl = document.createElement('button');
@@ -57,27 +76,26 @@ function createTrBookEl(object){
     trEl.appendChild(authorTdEl);
     trEl.appendChild(buttonsTdEl);
 
+    deleteBtnEl.addEventListener('click', async () => {
+        //Delete request
+        try {
+            const response = await fetch(`${baseUrl}/${object._id}`, {
+                method: 'DELETE',
+            });
+
+            trEl.remove();
+        } catch (error) {
+            console.log(error);
+        }
+
+
+
+    });
+
     return trEl;
 }
 
-function fetchBooks(){
-    fetch(baseUrl)
-        .then(response => {
-            if(!response.ok){
-                throw Error('Something went wrong');
-            }
 
-           return response.json();
-        })
-        .then(result => {
-              //clear book list
-             tbodyEl.innerHTML = '';
-
-            const books = Object.values(result);
-            tbodyEl.append(...books.map(createTrBookEl));    
-        })
-        .catch(reject => console.log(reject));
-}
 
 
 
