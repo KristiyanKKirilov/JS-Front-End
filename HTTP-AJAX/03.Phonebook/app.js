@@ -17,6 +17,8 @@ function attachEvents() {
     function getAllPhonesHandler(){
         customFetch(baseUrl)
             .then(result => {
+                ulPhoneBookElement.textContent = "";
+                
                 Object.values(result).forEach(({person, phone, id}) => {
                     const liElement = document.createElement("li");
                     liElement.textContent = `${person}: ${phone}`;
