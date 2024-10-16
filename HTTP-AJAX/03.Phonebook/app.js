@@ -41,7 +41,7 @@ function attachEvents() {
                 person: personInputElement.value,
                 phone: phoneInputElement.value
             })
-        }).then(result => {
+        }).then(() => {
             personInputElement.value = "";
             phoneInputElement.value = "";
         });
