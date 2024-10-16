@@ -3,6 +3,7 @@ function attachEvents() {
 
     const ulPhoneBookElement = document.getElementById("phonebook");
     const loadBtnElement = document.getElementById("btnLoad");
+    const createBtnElement = document.getElementById("btnCreate");
     const [personInputElement, phoneInputElement] = document.querySelectorAll("input[type=text]");
 
     async function customFetch(url, options){
@@ -30,7 +31,24 @@ function attachEvents() {
             })
     }
 
+    function createPhoneHandler(){
+        customFetch(baseUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                person: personInputElement.value,
+                phone: phoneInputElement.value
+            })
+        }).then(result => {
+            personInputElement.value = "";
+            phoneInputElement.value = "";
+        });
+    }
+
     loadBtnElement.addEventListener("click", getAllPhonesHandler);
+    createBtnElement.addEventListener("click", createPhoneHandler);
 }
 
 attachEvents();
