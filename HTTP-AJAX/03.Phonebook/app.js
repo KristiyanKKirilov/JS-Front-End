@@ -46,6 +46,7 @@ function attachEvents() {
         }).then(() => {
             personInputElement.value = "";
             phoneInputElement.value = "";
+            getAllPhonesHandler();
         });
     }
 
