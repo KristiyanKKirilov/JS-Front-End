@@ -1,4 +1,5 @@
 function attachEvents() {
+    let allPosts = [];
     const baseUrl = "http://localhost:3030/jsonstore/blog";
     const postsUrl = `${baseUrl}/posts`;
     const commentsUrl = `${baseUrl}/comments`;
@@ -17,14 +18,16 @@ function attachEvents() {
 
     function appendPosts(postResponse) {
         selectPostElement.textContent = "";
-
+        allPosts = [];
+        
         Object.values(postResponse).forEach(({ body, id, title }) => {
             const optionElement = document.createElement("option");
 
             optionElement.textContent = title;
             optionElement.value = id;
-
+            
             selectPostElement.appendChild(optionElement);
+            allPosts.push({body, id, title});
         });
     }
 
@@ -36,17 +39,19 @@ function attachEvents() {
     function fetchSinglePost() {
         const { value: selectedPostId } = selectPostElement;
 
+        postTitleElement.textContent = "";
+        postBodyElement.textContent = "";
+
         if (!selectedPostId) {
             return;
         }
 
-        customFetch(`${postsUrl}/${selectedPostId}`)
-            .then(({ body, title }) => {
-                postBodyElement.textContent = body;
-                postTitleElement.textContent = title;
+        const selectedPost = allPosts.find((x) => x.id === selectedPostId);
 
-                return customFetch(commentsUrl);
-            })
+        postTitleElement.textContent = selectedPost.title;
+        postBodyElement.textContent = selectedPost.body;
+
+        customFetch(commentsUrl)
             .then((commentsReponse) => {
                 postCommentsElement.textContent = "";
 
@@ -62,7 +67,7 @@ function attachEvents() {
                     });
             });
     }
-    
+
     loadButtonElement.addEventListener("click", fetchAllPosts);
     viewPostButtonElement.addEventListener("click", fetchSinglePost);
 
