@@ -10,22 +10,29 @@ function attachEvents() {
         return fetch(url, options)
             .then(response => response.json());
     }
-
-    function deletePhoneHandler(){
-
-    }
+    
     function getAllPhonesHandler(){
         customFetch(baseUrl)
             .then(result => {
                 ulPhoneBookElement.textContent = "";
-                
-                Object.values(result).forEach(({person, phone, id}) => {
+                console.log(Object.values(result));
+                Object.values(result).forEach(({person, phone, _id}) => {
                     const liElement = document.createElement("li");
                     liElement.textContent = `${person}: ${phone}`;
 
                     const deleteBtnElement = document.createElement("button");
                     deleteBtnElement.textContent = "Delete";
-                    deleteBtnElement.addEventListener("click", deletePhoneHandler);
+                    deleteBtnElement.addEventListener("click", async () => {
+                        try {
+                            const response = await customFetch(`${baseUrl}/${_id}`, {
+                                method: "DELETE",            
+                            }); 
+                
+                            liElement.remove();
+                        } catch (error) {
+                            console.log(error);
+                        }  
+                    });
                
                     liElement.appendChild(deleteBtnElement);
                     ulPhoneBookElement.appendChild(liElement);
