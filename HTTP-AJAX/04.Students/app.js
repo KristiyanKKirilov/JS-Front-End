@@ -1,11 +1,11 @@
 function attachEvents() {
   const baseUrl = "http://localhost:3030/jsonstore/collections/students";
   const tbodyEl = document.querySelector("#results tbody");
-  const [firstNameInputEl, lastNameInputEl, facultyNumberEl, gradeEl] = document.querySelectorAll("input[type=text]");
+  const [firstNameInputEl, lastNameInputEl, facultyNumberInputEl, gradeInputEl] = document.querySelectorAll("input[type=text]");
   const submitBtnEl = document.getElementById("submit");
 
-  async function customFetch(url){
-    return fetch(url).then(response => response.json());
+  async function customFetch(url, options){
+    return fetch(url, options).then(response => response.json());
   }
 
   function loadAllStudentsHandler(){
@@ -32,7 +32,39 @@ function attachEvents() {
       });
     }
 
+    function createStudentHandler(){
+      if(firstNameInputEl.value && lastNameInputEl.value && facultyNumberInputEl.value && gradeInputEl.value){
+        customFetch(baseUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type" : "application/json",
+          },
+          body: JSON.stringify({
+            firstName: firstNameInputEl.value,
+            lastName: lastNameInputEl.value,
+            facultyNumber: facultyNumberInputEl.value,
+            grade: gradeInputEl.value
+          })
+        }).then(() => {
+          tbodyEl.innerHTML = "";
+          
+          firstNameInputEl.value = "";
+          lastNameInputEl.value = "";
+          facultyNumberInputEl.value = "";
+          gradeInputEl.value = "";          
+
+          loadAllStudentsHandler();
+        })
+        .catch(err => console.log(err));
+      }
+      else{
+        return;
+      }
+     
+    }
+
     loadAllStudentsHandler();
+    submitBtnEl.addEventListener("click", createStudentHandler);
 
 } 
 
