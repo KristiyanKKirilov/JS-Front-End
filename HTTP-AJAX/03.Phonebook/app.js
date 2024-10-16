@@ -15,7 +15,7 @@ function attachEvents() {
         customFetch(baseUrl)
             .then(result => {
                 ulPhoneBookElement.textContent = "";
-                console.log(Object.values(result));
+
                 Object.values(result).forEach(({person, phone, _id}) => {
                     const liElement = document.createElement("li");
                     liElement.textContent = `${person}: ${phone}`;
@@ -25,7 +25,10 @@ function attachEvents() {
                     deleteBtnElement.addEventListener("click", async () => {
                         try {
                             const response = await customFetch(`${baseUrl}/${_id}`, {
-                                method: "DELETE",            
+                                method: "DELETE",    
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
                             }); 
                 
                             liElement.remove();
